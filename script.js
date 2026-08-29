@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileMenu.innerHTML = `
             <div class="mobile-menu-content">
                 <nav class="mobile-nav-links">
-                    <a href="${rp}index.html">Home</a>
+                    <a href="${rp}index">Home</a>
                     <div class="mobile-dropdown">
                         <button class="mobile-dropdown-toggle" style="background:none; border:none; color:inherit; font:inherit; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:0.5rem; width:100%;">
                             Programs 
@@ -66,12 +66,12 @@ document.addEventListener('DOMContentLoaded', () => {
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                                 </button>
                                 <div class="mobile-submenu-menu" style="display: none; flex-direction: column; gap: 0.8rem; margin-top: 1rem; font-size: 0.95rem; color: #64748b;">
-                                    <a href="${rp}programs/cpl/cpl-air-navigation.html">Navigation & Flight Planning</a>
-                                    <a href="${rp}programs/cpl/cpl-aviation-meteorology.html">Aviation Meteorology</a>
-                                    <a href="${rp}programs/cpl/cpl-air-regulations.html">Air Law & Regulations</a>
-                                    <a href="${rp}programs/cpl/cpl-tech-general.html">Aircraft Technical (General)</a>
-                                    <a href="${rp}programs/cpl/cpl-tech-specific.html">Aircraft Technical (Specific)</a>
-                                    <a href="${rp}programs/cpl/cpl-rtr-a.html">Radio Telephony (RTR-A)</a>
+                                    <a href="${rp}programs/cpl/cpl-air-navigation">Navigation & Flight Planning</a>
+                                    <a href="${rp}programs/cpl/cpl-aviation-meteorology">Aviation Meteorology</a>
+                                    <a href="${rp}programs/cpl/cpl-air-regulations">Air Law & Regulations</a>
+                                    <a href="${rp}programs/cpl/cpl-tech-general">Aircraft Technical (General)</a>
+                                    <a href="${rp}programs/cpl/cpl-tech-specific">Aircraft Technical (Specific)</a>
+                                    <a href="${rp}programs/cpl/cpl-rtr-a">Radio Telephony (RTR-A)</a>
                                 </div>
                             </div>
                             <div class="mobile-submenu">
@@ -80,41 +80,41 @@ document.addEventListener('DOMContentLoaded', () => {
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                                 </button>
                                 <div class="mobile-submenu-menu" style="display: none; flex-direction: column; gap: 0.8rem; margin-top: 1rem; font-size: 0.95rem; color: #64748b;">
-                                    <a href="${rp}programs/atpl/atpl-general-navigation.html">General Navigation</a>
-                                    <a href="${rp}programs/atpl/atpl-radio-aids.html">Radio Aids and Instruments</a>
-                                    <a href="${rp}programs/atpl/atpl-meteorology.html">Air Meteorology</a>
-                                    <a href="${rp}programs/atpl/atpl-viva.html">ATPL Viva</a>
+                                    <a href="${rp}programs/atpl/atpl-general-navigation">General Navigation</a>
+                                    <a href="${rp}programs/atpl/atpl-radio-aids">Radio Aids and Instruments</a>
+                                    <a href="${rp}programs/atpl/atpl-meteorology">Air Meteorology</a>
+                                    <a href="${rp}programs/atpl/atpl-viva">ATPL Viva</a>
                                 </div>
                             </div>
-                            <a href="${rp}programs/cadet-preparation.html">Airline Cadet Pilot Preparation</a>
-                            <a href="${rp}programs/flight-training.html">Flight Training</a>
-                            <a href="${rp}programs/type-rating/pre-type-rating.html">Pre Type Rating Preparation</a>
-                            <a href="${rp}programs/type-rating/post-type-rating.html">Post Type Rating Preparation</a>
-                            <a href="${rp}programs/type-rating/type-rating.html">Type Rating (A320 / B737 / ATR / Others)</a>
+                            <a href="${rp}programs/cadet-preparation">Airline Cadet Pilot Preparation</a>
+                            <a href="${rp}programs/flight-training">Flight Training</a>
+                            <a href="${rp}programs/type-rating/pre-type-rating">Pre Type Rating Preparation</a>
+                            <a href="${rp}programs/type-rating/post-type-rating">Post Type Rating Preparation</a>
+                            <a href="${rp}programs/type-rating/type-rating">Type Rating (A320 / B737 / ATR / Others)</a>
                             <div class="mobile-submenu">
                                 <button class="mobile-submenu-toggle" style="background:none; border:none; color:inherit; font:inherit; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:0.5rem; width:100%;">
                                     Airline Selection Preparation
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                                 </button>
                                 <div class="mobile-submenu-menu" style="display: none; flex-direction: column; gap: 0.8rem; margin-top: 1rem; font-size: 0.95rem; color: #64748b;">
-                                    <a href="${rp}programs/selection/selection-overview.html">Overview</a>
-                                    <a href="${rp}programs/selection/selection-written-exam.html">Airline Written Exam Prep</a>
-                                    <a href="${rp}programs/selection/selection-psychometric.html">Psychometric and Aptitude Assessment</a>
-                                    <a href="${rp}programs/selection/selection-interview.html">Group Discussion and Personal Interview</a>
-                                    <a href="${rp}programs/selection/selection-sim.html">Sim Assessment</a>
+                                    <a href="${rp}programs/selection/selection-overview">Overview</a>
+                                    <a href="${rp}programs/selection/selection-written-exam">Airline Written Exam Prep</a>
+                                    <a href="${rp}programs/selection/selection-psychometric">Psychometric and Aptitude Assessment</a>
+                                    <a href="${rp}programs/selection/selection-interview">Group Discussion and Personal Interview</a>
+                                    <a href="${rp}programs/selection/selection-sim">Sim Assessment</a>
                                 </div>
                             </div>
-                            <a href="${rp}programs/simulator-assessment-prep.html">Simulator Assessment Prep</a>
-                            <a href="${rp}programs/career-counseling.html">Career Counseling & Planning</a>
+                            <a href="${rp}programs/simulator-assessment-prep">Simulator Assessment Prep</a>
+                            <a href="${rp}programs/career-counseling">Career Counseling & Planning</a>
                         </div>
                     </div>
-                    <a href="${rp}technology.html">Technology</a>
-                    <a href="${rp}about.html">About</a>
-                    <a href="${rp}careers.html">Careers</a>
-                    <a href="${rp}contact.html">Contact</a>
+                    <a href="${rp}technology">Technology</a>
+                    <a href="${rp}about">About</a>
+                    <a href="${rp}careers">Careers</a>
+                    <a href="${rp}contact">Contact</a>
                 </nav>
                 <div class="mobile-nav-actions">
-                    <a href="${rp}contact.html" class="btn btn-primary" style="margin-bottom: 0.5rem; justify-content: center;">Enquire Now &rarr;</a>
+                    <a href="${rp}contact" class="btn btn-primary" style="margin-bottom: 0.5rem; justify-content: center;">Enquire Now &rarr;</a>
                     
                 </div>
             </div>
