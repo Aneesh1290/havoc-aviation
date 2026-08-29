@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Aids and Instruments - ATPL | Havoc Aviation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .course-hero{background:linear-gradient(135deg,#0b2239 0%,#1a3a5c 60%,#0f2d4a 100%);padding:7rem 0 5rem;position:relative;overflow:hidden}
+        .course-hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(242,104,34,0.12) 0%,transparent 70%);pointer-events:none}
+        .breadcrumb{display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:rgba(255,255,255,.55);margin-bottom:2rem;font-weight:500}
+        .breadcrumb a{color:rgba(255,255,255,.55)}.breadcrumb a:hover{color:var(--primary-color)}.breadcrumb span{color:rgba(255,255,255,.35)}
+        .hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(242,104,34,.15);border:1px solid rgba(242,104,34,.3);color:#f9a06a;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;padding:.4rem 1rem;border-radius:50px;margin-bottom:1.5rem}
+        .course-hero h1{font-size:3.2rem;font-weight:900;color:#fff;line-height:1.1;margin-bottom:1.25rem;max-width:680px}
+        .course-hero h1 span{color:var(--primary-color)}
+        .hero-desc{font-size:1.05rem;color:rgba(255,255,255,.7);line-height:1.7;max-width:580px;margin-bottom:2.5rem}
+        .hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}
+        .btn-outline-white{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 2rem;border-radius:50px;font-weight:700;font-size:.95rem;border:2px solid rgba(255,255,255,.4);color:#fff;background:transparent;text-decoration:none;transition:all .3s ease}
+        .btn-outline-white:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.7)}
+        .hero-stats{display:flex;gap:2.5rem;margin-top:3.5rem;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,.1);flex-wrap:wrap}
+        .hero-stat-item .val{font-size:1.6rem;font-weight:900;color:#fff;line-height:1}
+        .hero-stat-item .label{font-size:.75rem;color:rgba(255,255,255,.5);margin-top:4px;text-transform:uppercase;letter-spacing:.5px;font-weight:600}
+        .section{padding:5rem 0}.section-alt{background:#f8fafc}
+        .section-label{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--primary-color);margin-bottom:.75rem}
+        .section-title{font-size:2.2rem;font-weight:800;color:var(--secondary-color);line-height:1.2;margin-bottom:1.25rem}
+        .overview-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+        .overview-text p{color:#64748b;font-size:1rem;line-height:1.8;margin-bottom:2rem}
+        .feature-list{display:flex;flex-direction:column;gap:.9rem}
+        .feature-item{display:flex;align-items:center;gap:.75rem;font-size:.95rem;font-weight:600;color:var(--secondary-color)}
+        .feature-dot{width:10px;height:10px;border-radius:50%;background:var(--primary-color);flex-shrink:0}
+        .overview-img{border-radius:20px;overflow:hidden;box-shadow:0 25px 50px rgba(11,34,57,.12)}
+        .overview-img img{width:100%;height:400px;object-fit:cover;display:block}
+        .curriculum-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem}
+        .curriculum-card{background:#fff;border-radius:16px;padding:2rem;box-shadow:0 4px 20px rgba(0,0,0,.05);border:1px solid #f1f5f9;transition:transform .3s,box-shadow .3s}
+        .curriculum-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(11,34,57,.1)}
+        .curriculum-icon{width:48px;height:48px;background:linear-gradient(135deg,rgba(242,104,34,.12),rgba(242,104,34,.05));border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;color:var(--primary-color)}
+        .curriculum-card h3{font-size:1.05rem;font-weight:700;color:var(--secondary-color);margin-bottom:1rem}
+        .curriculum-list{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+        .curriculum-list li{font-size:.875rem;color:#64748b;font-weight:500;display:flex;align-items:flex-start;gap:.5rem}
+        .curriculum-list li::before{content:"›";color:var(--primary-color);font-weight:700;flex-shrink:0}
+        .details-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem}
+        .details-card{background:#fff;border-radius:16px;padding:2.5rem;box-shadow:0 4px 20px rgba(0,0,0,.05);border:1px solid #f1f5f9}
+        .details-card h3{font-size:1.15rem;font-weight:700;color:var(--secondary-color);margin-bottom:1.5rem}
+        .detail-row{display:flex;justify-content:space-between;align-items:center;padding:.9rem 0;border-bottom:1px solid #f1f5f9;font-size:.9rem}
+        .detail-row:last-child{border-bottom:none}
+        .detail-row .key{color:#94a3b8;font-weight:600}.detail-row .val{font-weight:700;color:var(--secondary-color)}
+        .gain-list{display:flex;flex-direction:column;gap:.85rem}
+        .gain-item{display:flex;align-items:flex-start;gap:.75rem;font-size:.9rem;color:#475569;font-weight:500;line-height:1.5}
+        .gain-check{width:20px;height:20px;background:linear-gradient(135deg,var(--primary-color),#ff8a40);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+        .gain-check svg{width:10px;height:10px}
+        .course-cta{background:linear-gradient(135deg,#0b2239 0%,#1a3a5c 100%);padding:5rem 0;text-align:center;position:relative;overflow:hidden}
+        .course-cta h2{color:#fff;font-size:2.2rem;font-weight:800;margin-bottom:1rem}
+        .course-cta p{color:rgba(255,255,255,.65);font-size:1rem;max-width:520px;margin:0 auto 2.5rem;line-height:1.7}
+        .course-cta .ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+        @media(max-width:992px){.overview-grid{grid-template-columns:1fr;gap:3rem}.curriculum-grid{grid-template-columns:1fr 1fr}.details-grid{grid-template-columns:1fr}.course-hero h1{font-size:2.4rem}}
+        @media(max-width:768px){.course-hero{padding:6rem 0 4rem}.course-hero h1{font-size:2rem}.hero-stats{gap:1.5rem}.section-title{font-size:1.8rem}.curriculum-grid{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+    <header class="header" style="background:var(--white);position:relative;box-shadow:0 2px 10px rgba(0,0,0,.05);">
+        <div class="container">
+            <a href="../../index.html" class="logo" style="display:flex;align-items:center;gap:.75rem;text-decoration:none;">
+                <img src="../../assets/logo_transparent.png" alt="Havoc Aviation Logo" style="height:58px;width:auto;">
+                <div style="display:flex;flex-direction:column;justify-content:center;">
+                    <span style="font-size:1.4rem;font-weight:900;color:var(--secondary-color);line-height:1;">Havoc Aviation</span>
+                    <span style="font-size:.6rem;font-weight:700;color:var(--primary-color);text-transform:uppercase;letter-spacing:.5px;margin-top:4px;">Aviation &amp; Aerospace Training Institute</span>
+                </div>
+            </a>
+            <nav class="nav-links">
+                <a href="../../index.html">Home</a>
+                <div class="nav-item dropdown">
+                    <a href="../../programs.html" class="dropdown-toggle active">Programs <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-item has-submenu">
+                            <a href="../../programs.html#cpl">CPL Ground Classes</a>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            <div class="submenu">
+                                <a href="../../programs/cpl/cpl-air-navigation.html" class="submenu-item">Navigation &amp; Flight Planning</a>
+                                <a href="../../programs/cpl/cpl-aviation-meteorology.html" class="submenu-item">Aviation Meteorology</a>
+                                <a href="../../programs/cpl/cpl-air-regulations.html" class="submenu-item">Air Law &amp; Regulations</a>
+                                <a href="../../programs/cpl/cpl-tech-general.html" class="submenu-item">Aircraft Technical (General)</a>
+                                <a href="../../programs/cpl/cpl-tech-specific.html" class="submenu-item">Aircraft Technical (Specific)</a>
+                                <a href="../../programs/cpl/cpl-rtr-a.html" class="submenu-item">Radio Telephony (RTR-A)</a>
+                            </div>
+                        </div>
+                        <div class="dropdown-item has-submenu">
+                            <a href="../../programs.html#atpl">ATPL Ground Classes</a>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            <div class="submenu">
+                                <a href="../../programs/atpl/atpl-general-navigation.html" class="submenu-item">General Navigation</a>
+                                <a href="../../programs/atpl/atpl-radio-aids.html" class="submenu-item">Radio Aids and Instruments</a>
+                                <a href="../../programs/atpl/atpl-meteorology.html" class="submenu-item">Air Meteorology</a>
+                                <a href="../../programs/atpl/atpl-viva.html" class="submenu-item">ATPL Viva</a>
+                            </div>
+                        </div>
+                        <a href="../../programs/cadet-preparation.html" class="dropdown-item">Airline Cadet Pilot Preparation</a>
+                        <a href="../../programs/flight-training.html" class="dropdown-item">Flight Training</a>
+                        <a href="../../programs/type-rating/pre-type-rating.html" class="dropdown-item">Pre Type Rating Preparation</a>
+                        <a href="../../programs/type-rating/post-type-rating.html" class="dropdown-item">Post Type Rating Preparation</a>
+                        <a href="../../programs/type-rating/type-rating.html" class="dropdown-item">Type Rating (A320 / B737 / ATR / Others)</a>
+                        <div class="dropdown-item has-submenu">
+                            <a href="../../programs.html#selection">Airline Selection Preparation</a>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            <div class="submenu">
+                                <a href="../../programs/selection/selection-overview.html" class="submenu-item">Overview</a>
+                                <a href="../../programs/selection/selection-written-exam.html" class="submenu-item">Airline Written Exam Prep</a>
+                                <a href="../../programs/selection/selection-psychometric.html" class="submenu-item">Psychometric and Aptitude Assessment</a>
+                                <a href="../../programs/selection/selection-interview.html" class="submenu-item">Group Discussion and Personal Interview</a>
+                                <a href="../../programs/selection/selection-sim.html" class="submenu-item">Sim Assessment</a>
+                            </div>
+                        </div>
+                        <a href="../../programs/simulator-assessment-prep.html" class="dropdown-item">Simulator Assessment Prep</a>
+                        <a href="../../programs/career-counseling.html" class="dropdown-item">Career Counseling &amp; Planning</a>
+                    </div>
+                </div>
+                <a href="../../technology.html">Technology</a>
+                <a href="../../about.html">About</a>
+                <a href="../../careers.html">Careers</a>
+                <a href="../../contact.html">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="../../contact.html" class="btn btn-primary">Enquire Now &rarr;</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="course-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a><span>›</span>
+                <a href="../../programs.html">Programs</a><span>›</span>
+                <a href="../../programs.html#atpl">ATPL Ground Classes</a><span>›</span>
+                Radio Aids and Instruments
+            </div>
+            <div class="hero-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                ATPL Approved
+            </div>
+            <h1>Radio Aids and Instruments - <span>ATPL</span> Ground Classes</h1>
+            <p class="hero-desc">Advanced radio navigation aids and sophisticated flight instruments for airline operations.</p>
+            <div class="hero-ctas">
+                <a href="../../contact.html" class="btn btn-primary" style="padding:.9rem 2.25rem;font-size:1rem;">Enrol Now &rarr;</a>
+                <a href="../../contact.html" class="btn-outline-white">Contact Us</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat-item"><div class="val">10-12</div><div class="label">Weeks Duration</div></div>
+                <div class="hero-stat-item"><div class="val">75</div><div class="label">Training Hours</div></div>
+                <div class="hero-stat-item"><div class="val">ATPL</div><div class="label">Approved</div></div>
+                <div class="hero-stat-item"><div class="val">Online &amp; Sim</div><div class="label">Delivery Mode</div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="overview-grid">
+                <div class="overview-text">
+                    <p class="section-label">Course Overview</p>
+                    <h2 class="section-title">What This Module Covers</h2>
+                    <p>Our Radio Aids and Instruments course provides comprehensive training on advanced radio navigation systems and sophisticated flight instruments used in modern commercial aviation operations.</p>
+                    <div class="feature-list">
+                        <div class="feature-item"><span class="feature-dot"></span>ATPL Approved Curriculum</div>
+                        <div class="feature-item"><span class="feature-dot"></span>Advanced Radio Navigation</div>
+                        <div class="feature-item"><span class="feature-dot"></span>Modern Flight Instruments</div>
+                        <div class="feature-item"><span class="feature-dot"></span>Glass Cockpit Systems</div>
+                    </div>
+                </div>
+                <div class="overview-img">
+                    <img src="../../assets/flightsim.jpg" alt="Radio Aids and Instruments training">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt">
+        <div class="container">
+            <div style="text-align:center;">
+                <p class="section-label">Curriculum Highlights</p>
+                <h2 class="section-title">What You Will Study</h2>
+            </div>
+            <div class="curriculum-grid">
+                <div class="curriculum-card">
+                    <div class="curriculum-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 6l11 6 11-6"/><path d="M1 18l11-6 11 6"/></svg></div>
+                    <h3>Advanced Radio Navigation</h3>
+                    <ul class="curriculum-list">
+                        <li>ILS Cat II/III operations</li>
+                        <li>Localizer Performance with Vertical guidance</li>
+                        <li>Required Navigation Performance (RNP)</li>
+                        <li>Wide Area Augmentation System</li>
+                    </ul>
+                </div>
+                <div class="curriculum-card">
+                    <div class="curriculum-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+                    <h3>Glass Cockpit Systems</h3>
+                    <ul class="curriculum-list">
+                        <li>Primary Flight Display (PFD)</li>
+                        <li>Multi-Function Display (MFD)</li>
+                        <li>Electronic Flight Information System</li>
+                        <li>Integrated flight control systems</li>
+                    </ul>
+                </div>
+                <div class="curriculum-card">
+                    <div class="curriculum-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+                    <h3>Navigation Displays</h3>
+                    <ul class="curriculum-list">
+                        <li>Electronic Horizontal Situation Indicator</li>
+                        <li>Navigation Display systems</li>
+                        <li>Weather radar integration</li>
+                        <li>Traffic Collision Avoidance System</li>
+                    </ul>
+                </div>
+                <div class="curriculum-card">
+                    <div class="curriculum-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg></div>
+                    <h3>Automatic Flight Systems</h3>
+                    <ul class="curriculum-list">
+                        <li>Advanced autopilot systems</li>
+                        <li>Autothrottle systems</li>
+                        <li>Flight director systems</li>
+                        <li>Automatic approach and landing</li>
+                    </ul>
+                </div>
+                <div class="curriculum-card">
+                    <div class="curriculum-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+                    <h3>Communication Systems</h3>
+                    <ul class="curriculum-list">
+                        <li>VHF communication systems</li>
+                        <li>HF long-range communication</li>
+                        <li>SATCOM systems</li>
+                        <li>Data link communications</li>
+                    </ul>
+                </div>
+                <div class="curriculum-card">
+                    <div class="curriculum-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+                    <h3>Surveillance Systems</h3>
+                    <ul class="curriculum-list">
+                        <li>Transponder systems (Mode S)</li>
+                        <li>ADS-B Out/In systems</li>
+                        <li>Secondary surveillance radar</li>
+                        <li>Aircraft identification systems</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div style="text-align:center;">
+                <p class="section-label">Course Details</p>
+                <h2 class="section-title">Course Information</h2>
+            </div>
+            <div class="details-grid">
+                <div class="details-card">
+                    <h3>Programme Specs</h3>
+                    <div class="detail-row"><span class="key">Duration</span><span class="val">10-12 weeks</span></div>
+                    <div class="detail-row"><span class="key">Class Hours</span><span class="val">75 hours</span></div>
+                    <div class="detail-row"><span class="key">Mode</span><span class="val">Online & Simulator</span></div>
+                    <div class="detail-row"><span class="key">Certification</span><span class="val">ATPL Approved</span></div>
+                    <div class="detail-row"><span class="key">Prerequisites</span><span class="val">Radio Navigation Basics</span></div>
+                </div>
+                <div class="details-card">
+                    <h3>What You'll Gain</h3>
+                    <div class="gain-list">
+                        <div class="gain-item"><div class="gain-check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Advanced radio navigation expertise</div>
+                        <div class="gain-item"><div class="gain-check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Glass cockpit systems proficiency</div>
+                        <div class="gain-item"><div class="gain-check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Modern avionics operation skills</div>
+                        <div class="gain-item"><div class="gain-check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>ATPL exam preparation</div>
+                        <div class="gain-item"><div class="gain-check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Commercial aviation readiness</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="course-cta">
+        <div class="container">
+            <h2>Ready to Master Advanced Radio Systems?</h2>
+            <p>Join our comprehensive Radio Aids and Instruments course and master modern aviation technology.</p>
+            <div class="ctas">
+                <a href="../../contact.html" class="btn btn-primary" style="padding:.9rem 2.25rem;font-size:1rem;">Enrol Now &rarr;</a>
+                <a href="../../contact.html" class="btn-outline-white">Get More Information</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="../../script.js"></script>
+</body>
+</html>
+
+
+

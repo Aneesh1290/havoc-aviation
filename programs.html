@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programs | Havoc Aviation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .programs-header { padding: 6rem 0 3rem 0; text-align: center; }
+        .filters { display: flex; justify-content: center; gap: 0.75rem; margin-bottom: 4rem; flex-wrap: wrap; }
+        .filter-btn { padding: 0.6rem 1.5rem; border-radius: 50px; font-weight: 600; font-size: 0.9rem; cursor: pointer; border: 1px solid var(--border-color); background: var(--white); color: var(--text-dark); transition: all 0.3s; }
+        .filter-btn.active, .filter-btn:hover { background: var(--secondary-color); color: var(--white); border-color: var(--secondary-color); }
+        .programs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; margin-bottom: 6rem; padding: 0 1rem; }
+        .program-card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: transform 0.3s, box-shadow 0.3s; border: 1px solid #f1f5f9; }
+        .program-card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(0,0,0,0.1); }
+        .card-img { width: 100%; height: 210px; object-fit: cover; }
+        .card-body { padding: 1.75rem; }
+        .card-title { font-size: 1.25rem; font-weight: 700; color: var(--secondary-color); margin-bottom: 0.75rem; }
+        .card-desc { color: #64748b; font-size: 0.9rem; line-height: 1.5; margin-bottom: 1.5rem; min-height: 45px; }
+        .card-meta { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.5rem; font-size: 0.85rem; color: #64748b; font-weight: 500; }
+        .meta-item { display: flex; align-items: center; gap: 0.5rem; }
+        .meta-item svg { width: 16px; height: 16px; stroke: #94a3b8; }
+        .explore-link { color: var(--primary-color); font-weight: 600; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.25rem; transition: color 0.3s; }
+        .explore-link:hover { color: #d95616; }
+        
+        .programs-header-content p.subtitle { color: var(--primary-color); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 1rem; letter-spacing: 1.5px; }
+        .programs-header-content h1 { font-size: 3rem; font-weight: 800; color: var(--secondary-color); line-height: 1.1; margin: 0; }
+        
+        @media (max-width: 992px) {
+            .programs-header-content h1 { font-size: 2.5rem; }
+        }
+        @media (max-width: 768px) {
+            .programs-header { padding: 8rem 0 2rem 0; }
+            .programs-header-content h1 { font-size: 2.2rem; }
+            .filters { gap: 0.5rem; margin-bottom: 3rem; }
+            .filter-btn { padding: 0.5rem 1rem; font-size: 0.85rem; }
+            .programs-grid { grid-template-columns: 1fr; gap: 2rem; padding: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header (Same as index.html) -->
+    <header class="header" style="background: var(--white); position: relative; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+        <div class="container">
+            <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 0.75rem; text-decoration: none;">
+                <img src="assets/logo_transparent.png" alt="Havoc Aviation Logo" style="height: 58px; width: auto; ">
+                <div style="display: flex; flex-direction: column; justify-content: center;">
+                    <span style="font-size: 1.4rem; font-weight: 900; color: var(--secondary-color); line-height: 1;">Havoc Aviation</span>
+                    <span style="font-size: 0.6rem; font-weight: 700; color: var(--primary-color); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px;">Aviation &amp; Aerospace Training Institute</span>
+                </div>
+            </a>
+            
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <div class="nav-item dropdown">
+                    <a href="programs.html" class="dropdown-toggle">Programs <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-item has-submenu">
+                            <a href="programs.html#cpl">CPL Ground Classes</a>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            <div class="submenu">
+                                <a href="programs/cpl/cpl-air-navigation.html" class="submenu-item">Navigation & Flight Planning</a>
+                                <a href="programs/cpl/cpl-aviation-meteorology.html" class="submenu-item">Aviation Meteorology</a>
+                                <a href="programs/cpl/cpl-air-regulations.html" class="submenu-item">Air Law & Regulations</a>
+                                <a href="programs/cpl/cpl-tech-general.html" class="submenu-item">Aircraft Technical (General)</a>
+                                <a href="programs/cpl/cpl-tech-specific.html" class="submenu-item">Aircraft Technical (Specific)</a>
+                                <a href="programs/cpl/cpl-rtr-a.html" class="submenu-item">Radio Telephony (RTR-A)</a>
+                            </div>
+                        </div>
+                        <div class="dropdown-item has-submenu">
+                            <a href="programs.html#atpl">ATPL Ground Classes</a>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            <div class="submenu">
+                                <a href="programs/atpl/atpl-general-navigation.html" class="submenu-item">General Navigation</a>
+                                <a href="programs/atpl/atpl-radio-aids.html" class="submenu-item">Radio Aids and Instruments</a>
+                                <a href="programs/atpl/atpl-meteorology.html" class="submenu-item">Air Meteorology</a>
+                                <a href="programs/atpl/atpl-viva.html" class="submenu-item">ATPL Viva</a>
+                            </div>
+                        </div>
+                        <a href="programs/cadet-preparation.html" class="dropdown-item">Airline Cadet Pilot Preparation</a>
+                        <a href="programs/flight-training.html" class="dropdown-item">Flight Training</a>
+                        <a href="programs/type-rating/pre-type-rating.html" class="dropdown-item">Pre Type Rating Preparation</a>
+                        <a href="programs/type-rating/post-type-rating.html" class="dropdown-item">Post Type Rating Preparation</a>
+                        <a href="programs/type-rating/type-rating.html" class="dropdown-item">Type Rating (A320 / B737 / ATR / Others)</a>
+                        <div class="dropdown-item has-submenu">
+                            <a href="programs.html#selection">Airline Selection Preparation</a>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            <div class="submenu">
+                                <a href="programs/selection/selection-overview.html" class="submenu-item">Overview</a>
+                                <a href="programs/selection/selection-written-exam.html" class="submenu-item">Airline Written Exam Prep</a>
+                                <a href="programs/selection/selection-psychometric.html" class="submenu-item">Psychometric and Aptitude Assessment</a>
+                                <a href="programs/selection/selection-interview.html" class="submenu-item">Group Discussion and Personal Interview</a>
+                                <a href="programs/selection/selection-sim.html" class="submenu-item">Sim Assessment</a>
+                            </div>
+                        </div>
+                        <a href="programs/simulator-assessment-prep.html" class="dropdown-item">Simulator Assessment Prep</a>
+                        <a href="programs.html#career" class="dropdown-item">Career Counseling & Planning</a>
+                    </div>
+                </div>
+                <a href="technology.html">Technology</a>
+                <a href="about.html">About</a>
+                <a href="careers.html">Careers</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                
+                <a href="contact.html" class="btn btn-primary">Enquire Now &rarr;</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Programs Content -->
+    <section class="programs-header" style="padding: 4rem 0 2rem 0; text-align: left;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 2rem;">
+            <div class="programs-header-content" style="flex: 1; min-width: 300px;">
+                <p class="subtitle">OUR PROGRAMS</p>
+                <h1>Professional Training<br>for a Brighter Tomorrow.</h1>
+            </div>
+            <div style="flex: 0 1 400px;">
+                <p style="color: #64748b; font-size: 1.05rem; line-height: 1.6; margin: 0; text-align: left;">Globally relevant, industry-focused programs designed to help you achieve your aviation career goals.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="filters">
+                <button class="filter-btn active">All Programs</button>
+                <button class="filter-btn">Pilot Training</button>
+                <button class="filter-btn">Cabin Crew</button>
+                <button class="filter-btn">Ground Staff</button>
+                <button class="filter-btn">Simulator</button>
+                <button class="filter-btn">Other</button>
+            </div>
+
+            <div class="programs-grid">
+                <!-- Card 1 -->
+                <div class="program-card">
+                    <img src="assets/pilot.jpg" alt="CPL / ATPL Ground Classes" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">CPL / ATPL Ground Classes</h3>
+                        <p class="card-desc">Start your aviation journey with solid ground training.</p>
+                        <div class="full-desc" style="display: none;">
+                            <p>Start with CPL fundamentals and progress to ATPL mastery. Our ground training features modern learning tools, ATPL viva preparation, and instruction from active airline pilots.</p>
+                        </div>
+                        <div class="card-meta">
+                            <div class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 3 - 6 Months</div>
+                            <div class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> 10+2 (Science)</div>
+                        </div>
+                        <a href="#" class="explore-link open-modal-btn">Explore Program &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="program-card">
+                    <img src="assets/cabincrew.jpg" alt="Airline Cadet Pilot Prep" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">Airline Cadet Pilot Prep</h3>
+                        <p class="card-desc">Crack top airline cadet programs with targeted preparation.</p>
+                        <div class="full-desc" style="display: none;">
+                            <p>Comprehensive end-to-end preparation for top cadet programs, covering written exams, psychometrics, group tasks, interviews, and introductory simulator training.</p>
+                        </div>
+                        <div class="card-meta">
+                            <div class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 2 - 4 Months</div>
+                            <div class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> 10+2 (Science)</div>
+                        </div>
+                        <a href="#" class="explore-link open-modal-btn">Explore Program &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="program-card">
+                    <img src="assets/groundstaff.jpg" alt="Flight Training" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">Flight Training</h3>
+                        <p class="card-desc">Train with modern aircraft and experienced instructors.</p>
+                        <div class="full-desc" style="display: none;">
+                            <p>Experience seamless transitions from ground to sky. We collaborate with premier partner flying schools to provide instruction on modern aircraft.</p>
+                        </div>
+                        <div class="card-meta">
+                            <div class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 12 - 18 Months</div>
+                            <div class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> Medical Class I</div>
+                        </div>
+                        <a href="#" class="explore-link open-modal-btn">Explore Program &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="program-card">
+                    <img src="assets/simulator.jpg" alt="Pre Type Rating Prep" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">Pre Type Rating Prep</h3>
+                        <p class="card-desc">Maximise your type rating investment with targeted prep.</p>
+                        <div class="full-desc" style="display: none;">
+                            <p>Maximize the value of your type rating investment. We ensure you are completely simulator-ready with robust technical pre-course preparation.</p>
+                        </div>
+                        <div class="card-meta">
+                            <div class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 2 - 4 Weeks</div>
+                            <div class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> CPL Holder</div>
+                        </div>
+                        <a href="#" class="explore-link open-modal-btn">Explore Program &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="program-card">
+                    <img src="assets/maintenance.jpg" alt="Post Type Rating Prep" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">Post Type Rating Prep</h3>
+                        <p class="card-desc">Maximise your type rating investment with targeted reinforcement.</p>
+                        <div class="full-desc" style="display: none;">
+                            <p>Consolidate your type rating training with focused post-course reinforcement, sharpening your technical and simulator proficiency before airline induction.</p>
+                        </div>
+                        <div class="card-meta">
+                            <div class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 2 - 4 Weeks</div>
+                            <div class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> Type Rating Holder</div>
+                        </div>
+                        <a href="#" class="explore-link open-modal-btn">Explore Program &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="program-card">
+                    <img src="assets/hospitality.jpg" alt="Type Rating (A320/B737)" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">Type Rating (A320/B737)</h3>
+                        <p class="card-desc">Master your aircraft type through airline-ready training.</p>
+                        <div class="full-desc" style="display: none;">
+                            <p>Achieve airline-readiness with simulator-centric training through DGCA-certified TRTOs, focusing deeply on systems knowledge and SOPs.</p>
+                        </div>
+                        <div class="card-meta">
+                            <div class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 4 - 6 Weeks</div>
+                            <div class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> CPL Holder</div>
+                        </div>
+                        <a href="#" class="explore-link open-modal-btn">Explore Program &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="program-card">
+                    <img src="assets/pilot.jpg" alt="Airline Selection Prep" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">Airline Selection Prep</h3>
+                        <p class="card-desc">Crack the toughest airline selection processes with confidence.</p>
+                        <div class="full-desc" style="display: none;">
+                            <p>Navigate tough airline assessments confidently. We offer mock technical/HR interviews, psychometric evaluation, and advanced group exercise coaching.</p>
+                        </div>
+                        <div class="card-meta">
+                            <div class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 1 - 2 Weeks</div>
+                            <div class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> Any Pilot License</div>
+                        </div>
+                        <a href="#" class="explore-link open-modal-btn">Explore Program &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="program-card">
+                    <img src="assets/simulator.jpg" alt="Simulator Assessment Prep" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">Simulator Assessment Prep</h3>
+                        <p class="card-desc">Learn how to approach airline sim profiles with confidence.</p>
+                        <div class="full-desc" style="display: none;">
+                            <p>Learn to tackle complex airline simulator profiles with high precision and confidence under the direct guidance of seasoned instructors.</p>
+                        </div>
+                        <div class="card-meta">
+                            <div class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Flexible</div>
+                            <div class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> CPL/ATPL Holder</div>
+                        </div>
+                        <a href="#" class="explore-link open-modal-btn">Explore Program &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Card 9 -->
+                <div class="program-card">
+                    <img src="assets/groundstaff.jpg" alt="Career Counseling" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">Career Counseling</h3>
+                        <p class="card-desc">Get one-on-one guidance from aviation experts to chart your ideal path.</p>
+                        <div class="full-desc" style="display: none;">
+                            <p>Secure one-on-one sessions with industry veterans to strategically map your journey from flight school selection to achieving your long-term career goals.</p>
+                        </div>
+                        <div class="card-meta">
+                            <div class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 1 - 2 Sessions</div>
+                            <div class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> Open to All</div>
+                        </div>
+                        <a href="#" class="explore-link open-modal-btn">Explore Program &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Program Modal HTML -->
+            <div class="program-modal-overlay" id="programModal">
+                <div class="program-modal-content">
+                    <button class="close-modal">&times;</button>
+                    <div class="modal-header">
+                        <div class="modal-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                        </div>
+                        <h3 class="modal-title" id="modalTitle">Course Title</h3>
+                    </div>
+                    <div class="modal-body" id="modalBody">
+                        <p>Course Description</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-outline close-modal-btn">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <footer class="footer-cta">
+        <div class="container">
+            <h2>HIGHER SKILLS.<br>BRIGHTER HORIZONS.</h2>
+            <a href="contact.html" class="btn btn-primary" style="padding: 1rem 2rem; font-size: 1.1rem;">Join Havoc Aviation &rarr;</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airline Written Exam Preparation | Havoc Aviation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .page-bg{background:#f4f7fb;padding:4rem 0;}
+        .breadcrumb{display:flex;align-items:center;justify-content:center;gap:.5rem;font-size:.8rem;color:#64748b;margin-bottom:2rem;font-weight:500}
+        .breadcrumb a{color:#64748b}.breadcrumb a:hover{color:var(--primary-color)}.breadcrumb span{color:#cbd5e1}
+        
+        .content-box{background:#fff;border-radius:16px;box-shadow:0 10px 40px rgba(11,34,57,.05);overflow:hidden;max-width:1000px;margin:0 auto;}
+        
+        .box-header{background:linear-gradient(135deg,#5c728e 0%,#465a75 100%);padding:4rem 2rem;text-align:center;color:#fff}
+        .box-header h1{font-size:2.2rem;font-weight:800;margin-bottom:.75rem}
+        .box-header p{font-size:.95rem;opacity:.9}
+        
+        .box-body{padding:4rem;}
+        .section-title{font-size:1.4rem;font-weight:800;color:var(--secondary-color);margin-bottom:1.5rem}
+        .box-body p.overview{color:#475569;font-size:.95rem;line-height:1.7;margin-bottom:3rem}
+        
+        .learn-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:3.5rem}
+        .learn-item{position:relative;padding-left:1.5rem}
+        .learn-item::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--primary-color)}
+        .learn-item h4{font-size:.95rem;font-weight:700;color:var(--secondary-color);margin-bottom:.25rem}
+        .learn-item p{font-size:.85rem;color:#64748b;line-height:1.5}
+        
+        .highlights-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:3.5rem}
+        .highlight-card{background:#f8fafc;border-radius:12px;padding:1.5rem;border:1px solid #f1f5f9}
+        .highlight-card h4{font-size:.95rem;font-weight:700;color:var(--secondary-color);margin-bottom:.5rem}
+        .highlight-card p{font-size:.85rem;color:#64748b;line-height:1.5}
+        
+        .details-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem 3rem;background:#f8fafc;padding:2rem;border-radius:12px;margin-bottom:3rem}
+        .detail-item h4{font-size:.85rem;font-weight:600;color:var(--secondary-color);margin-bottom:.25rem}
+        .detail-item p{font-size:.85rem;color:#64748b}
+        
+        .box-cta{background:linear-gradient(135deg,#364557 0%,#263342 100%);border-radius:12px;padding:3rem 2rem;text-align:center;color:#fff}
+        .box-cta h2{font-size:1.5rem;font-weight:800;margin-bottom:.5rem}
+        .box-cta p{font-size:.9rem;opacity:.8;margin-bottom:1.5rem}
+        .btn-box{display:inline-block;background:rgba(255,255,255,.2);color:#fff;font-weight:600;padding:.75rem 2rem;border-radius:8px;text-decoration:none;font-size:.9rem;transition:background .3s}
+        .btn-box:hover{background:rgba(255,255,255,.3)}
+        
+        @media(max-width:768px){
+            .box-body{padding:2rem;}
+            .learn-grid{grid-template-columns:1fr;}
+            .highlights-grid{grid-template-columns:1fr;}
+            .details-grid{grid-template-columns:1fr;}
+        }
+    </style>
+</head>
+<body>
+    <header class="header" style="background:var(--white);position:relative;box-shadow:0 2px 10px rgba(0,0,0,.05);">
+        <div class="container">
+            <a href="../../index.html" class="logo" style="display:flex;align-items:center;gap:.75rem;text-decoration:none;">
+                <img src="../../assets/logo_transparent.png" alt="Havoc Aviation Logo" style="height:58px;width:auto;">
+                <div style="display:flex;flex-direction:column;justify-content:center;">
+                    <span style="font-size:1.4rem;font-weight:900;color:var(--secondary-color);line-height:1;">Havoc Aviation</span>
+                    <span style="font-size:.6rem;font-weight:700;color:var(--primary-color);text-transform:uppercase;letter-spacing:.5px;margin-top:4px;">Aviation &amp; Aerospace Training Institute</span>
+                </div>
+            </a>
+            <nav class="nav-links">
+                <a href="../../index.html">Home</a>
+                <div class="nav-item dropdown">
+                    <a href="../../programs.html" class="dropdown-toggle active">Programs <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-item has-submenu">
+                            <a href="../../programs.html#cpl">CPL Ground Classes</a>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            <div class="submenu">
+                                <a href="../../programs/cpl/cpl-air-navigation.html" class="submenu-item">Navigation &amp; Flight Planning</a>
+                                <a href="../../programs/cpl/cpl-aviation-meteorology.html" class="submenu-item">Aviation Meteorology</a>
+                                <a href="../../programs/cpl/cpl-air-regulations.html" class="submenu-item">Air Law &amp; Regulations</a>
+                                <a href="../../programs/cpl/cpl-tech-general.html" class="submenu-item">Aircraft Technical (General)</a>
+                                <a href="../../programs/cpl/cpl-tech-specific.html" class="submenu-item">Aircraft Technical (Specific)</a>
+                                <a href="../../programs/cpl/cpl-rtr-a.html" class="submenu-item">Radio Telephony (RTR-A)</a>
+                            </div>
+                        </div>
+                        <div class="dropdown-item has-submenu">
+                            <a href="../../programs.html#atpl">ATPL Ground Classes</a>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            <div class="submenu">
+                                <a href="../../programs/atpl/atpl-general-navigation.html" class="submenu-item">General Navigation</a>
+                                <a href="../../programs/atpl/atpl-radio-aids.html" class="submenu-item">Radio Aids and Instruments</a>
+                                <a href="../../programs/atpl/atpl-meteorology.html" class="submenu-item">Air Meteorology</a>
+                                <a href="../../programs/atpl/atpl-viva.html" class="submenu-item">ATPL Viva</a>
+                            </div>
+                        </div>
+                        <a href="../../programs/cadet-preparation.html" class="dropdown-item">Airline Cadet Pilot Preparation</a>
+                        <a href="../../programs/flight-training.html" class="dropdown-item">Flight Training</a>
+                        <a href="../../programs/type-rating/pre-type-rating.html" class="dropdown-item">Pre Type Rating Preparation</a>
+                        <a href="../../programs/type-rating/post-type-rating.html" class="dropdown-item">Post Type Rating Preparation</a>
+                        <a href="../../programs/type-rating/type-rating.html" class="dropdown-item">Type Rating (A320 / B737 / ATR / Others)</a>
+                        <div class="dropdown-item has-submenu">
+                            <a href="../../programs.html#selection">Airline Selection Preparation</a>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            <div class="submenu">
+                                <a href="../../programs/selection/selection-overview.html" class="submenu-item">Overview</a>
+                                <a href="../../programs/selection/selection-written-exam.html" class="submenu-item">Airline Written Exam Prep</a>
+                                <a href="../../programs/selection/selection-psychometric.html" class="submenu-item">Psychometric and Aptitude Assessment</a>
+                                <a href="../../programs/selection/selection-interview.html" class="submenu-item">Group Discussion and Personal Interview</a>
+                                <a href="../../programs/selection/selection-sim.html" class="submenu-item">Sim Assessment</a>
+                            </div>
+                        </div>
+                        <a href="../../programs/simulator-assessment-prep.html" class="dropdown-item">Simulator Assessment Prep</a>
+                        <a href="../../programs/career-counseling.html" class="dropdown-item">Career Counseling &amp; Planning</a>
+                    </div>
+                </div>
+                <a href="../../technology.html">Technology</a>
+                <a href="../../about.html">About</a>
+                <a href="../../careers.html">Careers</a>
+                <a href="../../contact.html">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="../../contact.html" class="btn btn-primary">Enquire Now &rarr;</a>
+            </div>
+        </div>
+    </header>
+    
+    <div style="background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,1)), url('assets/hero-bg.jpg') center/cover; padding: 2rem 0; text-align:center;">
+        <div class="container">
+            <h2 style="font-size:2rem;font-weight:900;color:var(--secondary-color);">Embark on your<br>aviation journey</h2>
+        </div>
+    </div>
+
+    <section class="page-bg">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a><span>›</span>
+                <a href="../../programs.html">Programs</a><span>›</span>
+                <a href="../../programs/selection/selection-overview.html">Airline Selection</a><span>›</span>
+                Written Exam Prep
+            </div>
+            
+            <div class="content-box">
+                <div class="box-header">
+                    <h1>Airline Written Exam Preparation</h1>
+                    <p>Comprehensive preparation for airline entrance written examinations</p>
+                </div>
+                
+                <div class="box-body">
+                    <h2 class="section-title">Course Overview</h2>
+                    <p class="overview">Our Airline Written Exam Preparation course is designed to help aspiring pilots excel in airline entrance examinations. This comprehensive program covers all essential subjects and provides intensive practice to ensure success in competitive airline selection processes.</p>
+                    
+                    <h2 class="section-title">What You'll Learn</h2>
+                    <div class="learn-grid">
+                        <div class="learn-item">
+                            <h4>Air Navigation</h4>
+                            <p>Advanced concepts of air navigation and flight planning</p>
+                        </div>
+                        <div class="learn-item">
+                            <h4>Technical General</h4>
+                            <p>General technical knowledge relevant to aviation</p>
+                        </div>
+                        <div class="learn-item">
+                            <h4>Air Regulations</h4>
+                            <p>Fundamental regulations governing aviation operations</p>
+                        </div>
+                        <div class="learn-item">
+                            <h4>Technical Specific</h4>
+                            <p>A320, B737, ATR, etc.</p>
+                        </div>
+                        <div class="learn-item">
+                            <h4>Meteorology</h4>
+                            <p>Understanding weather patterns and their impact on aviation</p>
+                        </div>
+                        <div class="learn-item">
+                            <h4>Special OPS</h4>
+                            <p>ETOPS, RVSM, Performance</p>
+                        </div>
+                    </div>
+                    
+                    <h2 class="section-title">Course Highlights</h2>
+                    <div class="highlights-grid">
+                        <div class="highlight-card">
+                            <h4>Expert Faculty</h4>
+                            <p>Learn from experienced aviation professionals and subject matter experts</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Updated Curriculum</h4>
+                            <p>Latest syllabus aligned with current airline examination patterns</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Performance Tracking</h4>
+                            <p>Regular assessments and progress monitoring for optimal results</p>
+                        </div>
+                    </div>
+                    
+                    <h2 class="section-title">Course Details</h2>
+                    <div class="details-grid">
+                        <div class="detail-item">
+                            <h4>Duration</h4>
+                            <p>4-6 weeks</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Prerequisites</h4>
+                            <p>CPL</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Mode</h4>
+                            <p>Online &amp; Offline</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Study Material</h4>
+                            <p>Online – Offline sessions, online resources and practice tests</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Batch Size</h4>
+                            <p>Limited to 25 students</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Support</h4>
+                            <p>24/7 doubt clearing and mentorship</p>
+                        </div>
+                    </div>
+                    
+                    <div class="box-cta">
+                        <h2>Ready to Excel in Airline Written Exams?</h2>
+                        <p>Join our comprehensive preparation program and boost your chances of success</p>
+                        <a href="../../contact.html" class="btn-box">Enroll Now</a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <script src="../../script.js"></script>
+</body>
+</html>
+
+
+

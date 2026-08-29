@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psychometric and Aptitude Assessment | Havoc Aviation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .page-bg{background:#f4f7fb;padding:4rem 0;}
+        .breadcrumb{display:flex;align-items:center;justify-content:center;gap:.5rem;font-size:.8rem;color:#64748b;margin-bottom:2rem;font-weight:500}
+        .breadcrumb a{color:#64748b}.breadcrumb a:hover{color:var(--primary-color)}.breadcrumb span{color:#cbd5e1}
+        
+        .content-box{background:#fff;border-radius:16px;box-shadow:0 10px 40px rgba(11,34,57,.05);overflow:hidden;max-width:1000px;margin:0 auto;}
+        
+        .box-header{background:linear-gradient(135deg,#5c728e 0%,#465a75 100%);padding:4rem 2rem;text-align:center;color:#fff}
+        .box-header h1{font-size:2.2rem;font-weight:800;margin-bottom:.75rem}
+        .box-header p{font-size:.95rem;opacity:.9}
+        
+        .box-body{padding:4rem;}
+        .section-title{font-size:1.4rem;font-weight:800;color:var(--secondary-color);margin-bottom:1.5rem}
+        .box-body p.overview{color:#475569;font-size:.95rem;line-height:1.7;margin-bottom:3rem}
+        
+        .areas-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem 3rem;margin-bottom:3.5rem}
+        .area-col{display:flex;flex-direction:column;gap:2rem}
+        .area-item{border-left:3px solid var(--primary-color);padding-left:1.5rem}
+        .area-item h4{font-size:.95rem;font-weight:700;color:var(--secondary-color);margin-bottom:.75rem}
+        .area-list{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+        .area-list li{font-size:.85rem;color:#64748b;display:flex;align-items:flex-start;gap:.5rem}
+        .area-list li::before{content:"-";color:#cbd5e1}
+
+        .method-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:3.5rem}
+        .method-card{background:#fff;border-radius:12px;padding:1.5rem;border:1px solid #e2e8f0;box-shadow:0 2px 10px rgba(0,0,0,.02)}
+        .method-step{width:36px;height:36px;background:linear-gradient(135deg,var(--secondary-color),#334155);color:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1rem;margin-bottom:1rem}
+        .method-card h4{font-size:.95rem;font-weight:700;color:var(--secondary-color);margin-bottom:.5rem}
+        .method-card p{font-size:.85rem;color:#64748b;line-height:1.5}
+
+        .features-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;background:#f8fafc;padding:2rem;border-radius:12px;margin-bottom:3.5rem}
+        .feature-item{display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:#475569;font-weight:500}
+        .feature-check{width:20px;height:20px;background:#cbd5e1;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+        .feature-check svg{width:12px;height:12px;stroke:#fff}
+        
+        .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:3rem}
+        .info-card{border:1px solid #e2e8f0;border-radius:12px;padding:2rem}
+        .info-card h4{font-size:1rem;font-weight:700;color:var(--secondary-color);margin-bottom:1.5rem}
+        .info-row{display:flex;justify-content:space-between;align-items:center;padding:.75rem 0;font-size:.85rem}
+        .info-row .key{color:#64748b}.info-row .val{font-weight:700;color:var(--secondary-color)}
+        .included-list{list-style:none;display:flex;flex-direction:column;gap:.75rem}
+        .included-list li{font-size:.85rem;color:#64748b;display:flex;align-items:flex-start;gap:.5rem}
+        .included-list li::before{content:"-";color:#cbd5e1}
+        
+        .box-cta{background:linear-gradient(135deg,#364557 0%,#263342 100%);border-radius:12px;padding:3rem 2rem;text-align:center;color:#fff}
+        .box-cta h2{font-size:1.5rem;font-weight:800;margin-bottom:.5rem}
+        .box-cta p{font-size:.9rem;opacity:.8;margin-bottom:1.5rem}
+        .btn-box{display:inline-block;background:rgba(255,255,255,.2);color:#fff;font-weight:600;padding:.75rem 2rem;border-radius:8px;text-decoration:none;font-size:.9rem;transition:background .3s}
+        .btn-box:hover{background:rgba(255,255,255,.3)}
+        
+        @media(max-width:768px){
+            .box-body{padding:2rem;}
+            .areas-grid{grid-template-columns:1fr;gap:2rem}
+            .method-grid{grid-template-columns:1fr;}
+            .features-grid{grid-template-columns:1fr;}
+            .info-grid{grid-template-columns:1fr;}
+        }
+    </style>
+</head>
+<body>
+    <header class="header" style="background:var(--white);position:relative;box-shadow:0 2px 10px rgba(0,0,0,.05);">
+        <div class="container">
+            <a href="../../index.html" class="logo" style="display:flex;align-items:center;gap:.75rem;text-decoration:none;">
+                <img src="../../assets/logo_transparent.png" alt="Havoc Aviation Logo" style="height:58px;width:auto;">
+                <div style="display:flex;flex-direction:column;justify-content:center;">
+                    <span style="font-size:1.4rem;font-weight:900;color:var(--secondary-color);line-height:1;">Havoc Aviation</span>
+                    <span style="font-size:.6rem;font-weight:700;color:var(--primary-color);text-transform:uppercase;letter-spacing:.5px;margin-top:4px;">Aviation &amp; Aerospace Training Institute</span>
+                </div>
+            </a>
+            <nav class="nav-links">
+                <a href="../../index.html">Home</a>
+                <div class="nav-item dropdown">
+                    <a href="../../programs.html" class="dropdown-toggle active">Programs <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-item has-submenu">
+                            <a href="../../programs.html#cpl">CPL Ground Classes</a>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            <div class="submenu">
+                                <a href="../../programs/cpl/cpl-air-navigation.html" class="submenu-item">Navigation &amp; Flight Planning</a>
+                                <a href="../../programs/cpl/cpl-aviation-meteorology.html" class="submenu-item">Aviation Meteorology</a>
+                                <a href="../../programs/cpl/cpl-air-regulations.html" class="submenu-item">Air Law &amp; Regulations</a>
+                                <a href="../../programs/cpl/cpl-tech-general.html" class="submenu-item">Aircraft Technical (General)</a>
+                                <a href="../../programs/cpl/cpl-tech-specific.html" class="submenu-item">Aircraft Technical (Specific)</a>
+                                <a href="../../programs/cpl/cpl-rtr-a.html" class="submenu-item">Radio Telephony (RTR-A)</a>
+                            </div>
+                        </div>
+                        <div class="dropdown-item has-submenu">
+                            <a href="../../programs.html#atpl">ATPL Ground Classes</a>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            <div class="submenu">
+                                <a href="../../programs/atpl/atpl-general-navigation.html" class="submenu-item">General Navigation</a>
+                                <a href="../../programs/atpl/atpl-radio-aids.html" class="submenu-item">Radio Aids and Instruments</a>
+                                <a href="../../programs/atpl/atpl-meteorology.html" class="submenu-item">Air Meteorology</a>
+                                <a href="../../programs/atpl/atpl-viva.html" class="submenu-item">ATPL Viva</a>
+                            </div>
+                        </div>
+                        <a href="../../programs/cadet-preparation.html" class="dropdown-item">Airline Cadet Pilot Preparation</a>
+                        <a href="../../programs/flight-training.html" class="dropdown-item">Flight Training</a>
+                        <a href="../../programs/type-rating/pre-type-rating.html" class="dropdown-item">Pre Type Rating Preparation</a>
+                        <a href="../../programs/type-rating/post-type-rating.html" class="dropdown-item">Post Type Rating Preparation</a>
+                        <a href="../../programs/type-rating/type-rating.html" class="dropdown-item">Type Rating (A320 / B737 / ATR / Others)</a>
+                        <div class="dropdown-item has-submenu">
+                            <a href="../../programs.html#selection">Airline Selection Preparation</a>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            <div class="submenu">
+                                <a href="../../programs/selection/selection-overview.html" class="submenu-item">Overview</a>
+                                <a href="../../programs/selection/selection-written-exam.html" class="submenu-item">Airline Written Exam Prep</a>
+                                <a href="../../programs/selection/selection-psychometric.html" class="submenu-item">Psychometric and Aptitude Assessment</a>
+                                <a href="../../programs/selection/selection-interview.html" class="submenu-item">Group Discussion and Personal Interview</a>
+                                <a href="../../programs/selection/selection-sim.html" class="submenu-item">Sim Assessment</a>
+                            </div>
+                        </div>
+                        <a href="../../programs/simulator-assessment-prep.html" class="dropdown-item">Simulator Assessment Prep</a>
+                        <a href="../../programs/career-counseling.html" class="dropdown-item">Career Counseling &amp; Planning</a>
+                    </div>
+                </div>
+                <a href="../../technology.html">Technology</a>
+                <a href="../../about.html">About</a>
+                <a href="../../careers.html">Careers</a>
+                <a href="../../contact.html">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="../../contact.html" class="btn btn-primary">Enquire Now &rarr;</a>
+            </div>
+        </div>
+    </header>
+    
+    <div style="background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,1)), url('assets/hero-bg.jpg') center/cover; padding: 2rem 0; text-align:center;">
+        <div class="container">
+            <h2 style="font-size:2rem;font-weight:900;color:var(--secondary-color);">Embark on your<br>aviation journey</h2>
+        </div>
+    </div>
+
+    <section class="page-bg">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a><span>›</span>
+                <a href="../../programs.html">Programs</a><span>›</span>
+                <a href="../../programs/selection/selection-overview.html">Airline Selection</a><span>›</span>
+                Psychometric Assessment
+            </div>
+            
+            <div class="content-box">
+                <div class="box-header">
+                    <h1>Psychometric and Aptitude Assessment</h1>
+                    <p>Master psychological and aptitude tests for airline selection</p>
+                </div>
+                
+                <div class="box-body">
+                    <h2 class="section-title">Course Overview</h2>
+                    <p class="overview">Our Psychometric and Aptitude Assessment preparation course is specifically designed to help candidates excel in the psychological and aptitude testing phases of airline selection. This comprehensive program focuses on developing the mental skills and cognitive abilities essential for successful pilot performance.</p>
+                    
+                    <h2 class="section-title">Assessment Areas Covered</h2>
+                    <div class="areas-grid">
+                        <div class="area-col">
+                            <div class="area-item">
+                                <h4>Cognitive Ability Tests</h4>
+                                <ul class="area-list">
+                                    <li>Numerical reasoning</li>
+                                    <li>Verbal reasoning</li>
+                                    <li>Abstract reasoning</li>
+                                    <li>Spatial awareness</li>
+                                </ul>
+                            </div>
+                            <div class="area-item">
+                                <h4>Personality Assessment</h4>
+                                <ul class="area-list">
+                                    <li>Leadership qualities</li>
+                                    <li>Stress management</li>
+                                    <li>Team collaboration</li>
+                                    <li>Decision-making skills</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="area-col">
+                            <div class="area-item">
+                                <h4>Aviation Specific Tests</h4>
+                                <ul class="area-list">
+                                    <li>Multi-tasking abilities</li>
+                                    <li>Situational judgment</li>
+                                    <li>Risk assessment</li>
+                                    <li>Attention to detail</li>
+                                </ul>
+                            </div>
+                            <div class="area-item">
+                                <h4>Psychological Evaluation</h4>
+                                <ul class="area-list">
+                                    <li>Mental health screening</li>
+                                    <li>Behavioral patterns</li>
+                                    <li>Emotional stability</li>
+                                    <li>Adaptability assessment</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2 class="section-title">Training Methodology</h2>
+                    <div class="method-grid">
+                        <div class="method-card">
+                            <div class="method-step">1</div>
+                            <h4>Assessment &amp; Analysis</h4>
+                            <p>Initial evaluation to identify strengths and areas for improvement</p>
+                        </div>
+                        <div class="method-card">
+                            <div class="method-step">2</div>
+                            <h4>Targeted Training</h4>
+                            <p>Customized training modules based on individual assessment results</p>
+                        </div>
+                        <div class="method-card">
+                            <div class="method-step">3</div>
+                            <h4>Practice &amp; Refinement</h4>
+                            <p>Extensive practice sessions with continuous feedback and improvement</p>
+                        </div>
+                    </div>
+
+                    <h2 class="section-title">Key Features</h2>
+                    <div class="features-grid">
+                        <div class="feature-item"><div class="feature-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Simulated airline assessment environment</div>
+                        <div class="feature-item"><div class="feature-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Real-time performance analytics</div>
+                        <div class="feature-item"><div class="feature-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Expert psychologist guidance</div>
+                        <div class="feature-item"><div class="feature-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Industry-standard assessment tools</div>
+                        <div class="feature-item"><div class="feature-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Personalized improvement strategies</div>
+                        <div class="feature-item"><div class="feature-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Comprehensive result analysis</div>
+                    </div>
+                    
+                    <h2 class="section-title">Course Information</h2>
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <h4>Program Details</h4>
+                            <div class="info-row"><span class="key">Duration:</span><span class="val">2-3 weeks</span></div>
+                            <div class="info-row"><span class="key">Sessions:</span><span class="val">20-30 hours</span></div>
+                            <div class="info-row"><span class="key">Mode:</span><span class="val">Online &amp; In-person</span></div>
+                            <div class="info-row"><span class="key">Certification:</span><span class="val">Assessment Report</span></div>
+                        </div>
+                        <div class="info-card">
+                            <h4>What's Included</h4>
+                            <ul class="included-list">
+                                <li>Comprehensive assessment battery</li>
+                                <li>Individual coaching sessions</li>
+                                <li>Practice test materials</li>
+                                <li>Performance tracking dashboard</li>
+                                <li>Expert feedback and recommendations</li>
+                                <li>Career guidance consultation</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="box-cta">
+                        <h2>Ready to Excel in Psychometric Assessments?</h2>
+                        <p>Join our specialized program and enhance your psychological readiness for airline selection</p>
+                        <a href="../../contact.html" class="btn-box">Enroll Now</a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <script src="../../script.js"></script>
+</body>
+</html>
+
+
+

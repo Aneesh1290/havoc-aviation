@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre Type Rating Preparation | Havoc Aviation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .course-hero{background:linear-gradient(135deg,#0b2239 0%,#1a3a5c 60%,#0f2d4a 100%);padding:7rem 0 5rem;position:relative;overflow:hidden;text-align:center}
+        .course-hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(242,104,34,0.12) 0%,transparent 70%);pointer-events:none}
+        .breadcrumb{display:flex;align-items:center;justify-content:center;gap:.5rem;font-size:.8rem;color:rgba(255,255,255,.55);margin-bottom:2rem;font-weight:500}
+        .breadcrumb a{color:rgba(255,255,255,.55)}.breadcrumb a:hover{color:var(--primary-color)}.breadcrumb span{color:rgba(255,255,255,.35)}
+        .course-hero h1{font-size:3.2rem;font-weight:900;color:#fff;line-height:1.1;margin-bottom:1.25rem;margin-left:auto;margin-right:auto;max-width:800px}
+        .course-hero h1 span{color:var(--primary-color)}
+        .hero-desc{font-size:1.05rem;color:rgba(255,255,255,.7);line-height:1.7;max-width:680px;margin:0 auto 2.5rem;}
+        .hero-ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+        .btn-outline-white{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 2rem;border-radius:50px;font-weight:700;font-size:.95rem;border:2px solid rgba(255,255,255,.4);color:#fff;background:transparent;text-decoration:none;transition:all .3s ease}
+        .btn-outline-white:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.7)}
+        
+        .section{padding:5rem 0}.section-alt{background:#f8fafc}
+        .section-label{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--primary-color);margin-bottom:.75rem}
+        .section-title{font-size:2.2rem;font-weight:800;color:var(--secondary-color);line-height:1.2;margin-bottom:1.25rem}
+        
+        .overview-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+        .overview-text p{color:#64748b;font-size:1rem;line-height:1.8;margin-bottom:2rem}
+        .feature-list{display:flex;flex-direction:column;gap:.9rem}
+        .feature-item{display:flex;align-items:center;gap:.75rem;font-size:.95rem;font-weight:600;color:var(--secondary-color)}
+        .feature-dot{width:10px;height:10px;border-radius:50%;background:var(--primary-color);flex-shrink:0}
+        
+        .benefits-box{background:#f8fafc;border-radius:16px;padding:3rem;border:1px solid rgba(242,104,34,.1)}
+        .benefits-box h3{font-size:1.4rem;font-weight:800;color:var(--secondary-color);margin-bottom:1.5rem}
+        .gain-list{display:flex;flex-direction:column;gap:.85rem}
+        .gain-item{display:flex;align-items:flex-start;gap:.75rem;font-size:.9rem;color:#475569;font-weight:500;line-height:1.5}
+        .gain-check{width:20px;height:20px;background:linear-gradient(135deg,var(--primary-color),#ff8a40);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+        .gain-check svg{width:10px;height:10px}
+
+        .aircraft-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:3rem}
+        .aircraft-card{background:#fff;border-radius:16px;padding:2.5rem 2rem;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.04);border:1px solid #f1f5f9;transition:transform .3s}
+        .aircraft-card:hover{transform:translateY(-5px)}
+        .aircraft-badge{width:60px;height:60px;background:var(--primary-color);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.2rem;margin:0 auto 1.5rem}
+        .aircraft-card h3{font-size:1.1rem;font-weight:700;color:var(--secondary-color);margin-bottom:.5rem}
+        .aircraft-card p{font-size:.85rem;color:#64748b}
+
+        .curriculum-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem}
+        .curriculum-card{background:#fff;border-radius:16px;padding:2rem;box-shadow:0 4px 20px rgba(0,0,0,.04);border:1px solid #f1f5f9;position:relative;overflow:hidden}
+        .card-number{width:36px;height:36px;background:rgba(242,104,34,.1);color:var(--primary-color);border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.9rem;margin-bottom:1.5rem}
+        .curriculum-card h3{font-size:1.05rem;font-weight:700;color:var(--secondary-color);margin-bottom:1rem}
+        .curriculum-list{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+        .curriculum-list li{font-size:.85rem;color:#64748b;font-weight:500;display:flex;align-items:flex-start;gap:.5rem}
+        .curriculum-list li::before{content:"-";color:#cbd5e1;font-weight:700;flex-shrink:0}
+
+        .details-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem}
+        .detail-item{display:flex;align-items:flex-start;gap:1.25rem;padding:1.5rem;background:#fff;border-radius:12px;border:1px solid #f1f5f9}
+        .detail-icon{width:40px;height:40px;background:var(--primary-color);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+        .detail-content h4{font-size:.95rem;font-weight:700;color:var(--secondary-color);margin-bottom:.25rem}
+        .detail-content p{font-size:.85rem;color:#64748b;line-height:1.5}
+
+        .course-cta{background:linear-gradient(135deg,#0b2239 0%,#1a3a5c 100%);padding:5rem 0;text-align:center}
+        .course-cta h2{color:#fff;font-size:2.2rem;font-weight:800;margin-bottom:1rem}
+        .course-cta p{color:rgba(255,255,255,.65);font-size:1rem;max-width:560px;margin:0 auto 2.5rem;line-height:1.7}
+        .course-cta .ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+        @media(max-width:992px){.overview-grid{grid-template-columns:1fr;gap:3rem}.aircraft-grid{grid-template-columns:1fr 1fr}.curriculum-grid{grid-template-columns:1fr 1fr}.details-grid{grid-template-columns:1fr}.course-hero h1{font-size:2.4rem}}
+        @media(max-width:768px){.course-hero{padding:6rem 0 4rem}.course-hero h1{font-size:2rem}.aircraft-grid{grid-template-columns:1fr}.curriculum-grid{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+    <header class="header" style="background:var(--white);position:relative;box-shadow:0 2px 10px rgba(0,0,0,.05);">
+        <div class="container">
+            <a href="../../index.html" class="logo" style="display:flex;align-items:center;gap:.75rem;text-decoration:none;">
+                <img src="../../assets/logo_transparent.png" alt="Havoc Aviation Logo" style="height:58px;width:auto;">
+                <div style="display:flex;flex-direction:column;justify-content:center;">
+                    <span style="font-size:1.4rem;font-weight:900;color:var(--secondary-color);line-height:1;">Havoc Aviation</span>
+                    <span style="font-size:.6rem;font-weight:700;color:var(--primary-color);text-transform:uppercase;letter-spacing:.5px;margin-top:4px;">Aviation &amp; Aerospace Training Institute</span>
+                </div>
+            </a>
+            <nav class="nav-links">
+                <a href="../../index.html">Home</a>
+                <div class="nav-item dropdown">
+                    <a href="../../programs.html" class="dropdown-toggle active">Programs <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-item has-submenu">
+                            <a href="../../programs.html#cpl">CPL Ground Classes</a>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            <div class="submenu">
+                                <a href="../../programs/cpl/cpl-air-navigation.html" class="submenu-item">Navigation &amp; Flight Planning</a>
+                                <a href="../../programs/cpl/cpl-aviation-meteorology.html" class="submenu-item">Aviation Meteorology</a>
+                                <a href="../../programs/cpl/cpl-air-regulations.html" class="submenu-item">Air Law &amp; Regulations</a>
+                                <a href="../../programs/cpl/cpl-tech-general.html" class="submenu-item">Aircraft Technical (General)</a>
+                                <a href="../../programs/cpl/cpl-tech-specific.html" class="submenu-item">Aircraft Technical (Specific)</a>
+                                <a href="../../programs/cpl/cpl-rtr-a.html" class="submenu-item">Radio Telephony (RTR-A)</a>
+                            </div>
+                        </div>
+                        <div class="dropdown-item has-submenu">
+                            <a href="../../programs.html#atpl">ATPL Ground Classes</a>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            <div class="submenu">
+                                <a href="../../programs/atpl/atpl-general-navigation.html" class="submenu-item">General Navigation</a>
+                                <a href="../../programs/atpl/atpl-radio-aids.html" class="submenu-item">Radio Aids and Instruments</a>
+                                <a href="../../programs/atpl/atpl-meteorology.html" class="submenu-item">Air Meteorology</a>
+                                <a href="../../programs/atpl/atpl-viva.html" class="submenu-item">ATPL Viva</a>
+                            </div>
+                        </div>
+                        <a href="../../programs/cadet-preparation.html" class="dropdown-item">Airline Cadet Pilot Preparation</a>
+                        <a href="../../programs/flight-training.html" class="dropdown-item">Flight Training</a>
+                        <a href="../../programs/type-rating/pre-type-rating.html" class="dropdown-item">Pre Type Rating Preparation</a>
+                        <a href="../../programs/type-rating/post-type-rating.html" class="dropdown-item">Post Type Rating Preparation</a>
+                        <a href="../../programs/type-rating/type-rating.html" class="dropdown-item">Type Rating (A320 / B737 / ATR / Others)</a>
+                        <div class="dropdown-item has-submenu">
+                            <a href="../../programs.html#selection">Airline Selection Preparation</a>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            <div class="submenu">
+                                <a href="../../programs/selection/selection-overview.html" class="submenu-item">Overview</a>
+                                <a href="../../programs/selection/selection-written-exam.html" class="submenu-item">Airline Written Exam Prep</a>
+                                <a href="../../programs/selection/selection-psychometric.html" class="submenu-item">Psychometric and Aptitude Assessment</a>
+                                <a href="../../programs/selection/selection-interview.html" class="submenu-item">Group Discussion and Personal Interview</a>
+                                <a href="../../programs/selection/selection-sim.html" class="submenu-item">Sim Assessment</a>
+                            </div>
+                        </div>
+                        <a href="../../programs/simulator-assessment-prep.html" class="dropdown-item">Simulator Assessment Prep</a>
+                        <a href="../../programs/career-counseling.html" class="dropdown-item">Career Counseling &amp; Planning</a>
+                    </div>
+                </div>
+                <a href="../../technology.html">Technology</a>
+                <a href="../../about.html">About</a>
+                <a href="../../careers.html">Careers</a>
+                <a href="../../contact.html">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="../../contact.html" class="btn btn-primary">Enquire Now &rarr;</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="course-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a><span>›</span>
+                <a href="../../programs.html">Programs</a><span>›</span>
+                Pre Type Rating Preparation
+            </div>
+            <h1>Pre Type Rating <span>Preparation</span></h1>
+            <p class="hero-desc">Comprehensive preparation for your upcoming type rating course with aircraft-specific systems knowledge.</p>
+            <div class="hero-ctas">
+                <a href="../../contact.html" class="btn btn-primary" style="padding:.9rem 2.25rem;font-size:1rem;">Enrol Now &rarr;</a>
+                <a href="../../contact.html" class="btn-outline-white">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="overview-grid">
+                <div class="overview-text">
+                    <p class="section-label">Course Overview</p>
+                    <h2 class="section-title">Foundational Knowledge</h2>
+                    <p>Our Pre Type Rating Preparation course provides comprehensive foundational knowledge for pilots preparing to undertake type rating training on specific aircraft types. This course ensures you enter your type rating program with confidence and solid preparation.</p>
+                    <div class="feature-list">
+                        <div class="feature-item"><span class="feature-dot"></span>Aircraft Systems Fundamentals</div>
+                        <div class="feature-item"><span class="feature-dot"></span>Type Specific Procedures</div>
+                        <div class="feature-item"><span class="feature-dot"></span>Performance Calculations</div>
+                        <div class="feature-item"><span class="feature-dot"></span>Emergency Procedures Training</div>
+                    </div>
+                </div>
+                <div class="benefits-box">
+                    <h3>Key Benefits</h3>
+                    <div class="gain-list">
+                        <div class="gain-item"><div class="gain-check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Reduced type rating course duration</div>
+                        <div class="gain-item"><div class="gain-check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Higher success rates in type rating exams</div>
+                        <div class="gain-item"><div class="gain-check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Comprehensive study materials provided</div>
+                        <div class="gain-item"><div class="gain-check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Expert instructor guidance</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt">
+        <div class="container">
+            <div style="text-align:center;">
+                <p class="section-label">Platforms</p>
+                <h2 class="section-title">Aircraft Types Covered</h2>
+            </div>
+            <div class="aircraft-grid">
+                <div class="aircraft-card">
+                    <div class="aircraft-badge">A320</div>
+                    <h3>Airbus A320 Family</h3>
+                    <p>A319, A320, A321</p>
+                </div>
+                <div class="aircraft-card">
+                    <div class="aircraft-badge">B737</div>
+                    <h3>Boeing 737</h3>
+                    <p>737-NG, 737 MAX</p>
+                </div>
+                <div class="aircraft-card">
+                    <div class="aircraft-badge">ATR</div>
+                    <h3>ATR Aircraft</h3>
+                    <p>ATR 42, ATR 72</p>
+                </div>
+                <div class="aircraft-card">
+                    <div class="aircraft-badge">+</div>
+                    <h3>Other Types</h3>
+                    <p>Embraer, DHC-8, and more</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div style="text-align:center;">
+                <p class="section-label">Course Curriculum</p>
+                <h2 class="section-title">What You Will Study</h2>
+            </div>
+            <div class="curriculum-grid">
+                <div class="curriculum-card">
+                    <div class="card-number">01</div>
+                    <h3>Aircraft Systems</h3>
+                    <ul class="curriculum-list">
+                        <li>Powerplant Systems</li>
+                        <li>Hydraulic Systems</li>
+                        <li>Electrical Systems</li>
+                        <li>Environmental Control</li>
+                        <li>Flight Controls</li>
+                    </ul>
+                </div>
+                <div class="curriculum-card">
+                    <div class="card-number">02</div>
+                    <h3>Avionics &amp; Navigation</h3>
+                    <ul class="curriculum-list">
+                        <li>Flight Management System</li>
+                        <li>Autopilot Operations</li>
+                        <li>Navigation Systems</li>
+                        <li>Communication Systems</li>
+                        <li>Weather Radar</li>
+                    </ul>
+                </div>
+                <div class="curriculum-card">
+                    <div class="card-number">03</div>
+                    <h3>Performance &amp; Weight</h3>
+                    <ul class="curriculum-list">
+                        <li>Takeoff Performance</li>
+                        <li>Landing Performance</li>
+                        <li>Weight &amp; Balance</li>
+                        <li>Fuel Planning</li>
+                        <li>Load Calculations</li>
+                    </ul>
+                </div>
+                <div class="curriculum-card">
+                    <div class="card-number">04</div>
+                    <h3>Normal Procedures</h3>
+                    <ul class="curriculum-list">
+                        <li>Preflight Procedures</li>
+                        <li>Engine Start Procedures</li>
+                        <li>Taxi &amp; Takeoff</li>
+                        <li>Cruise Operations</li>
+                        <li>Approach &amp; Landing</li>
+                    </ul>
+                </div>
+                <div class="curriculum-card">
+                    <div class="card-number">05</div>
+                    <h3>Emergency Procedures</h3>
+                    <ul class="curriculum-list">
+                        <li>Engine Failures</li>
+                        <li>System Malfunctions</li>
+                        <li>Emergency Evacuations</li>
+                        <li>Abnormal Situations</li>
+                        <li>Memory Items</li>
+                    </ul>
+                </div>
+                <div class="curriculum-card">
+                    <div class="card-number">06</div>
+                    <h3>Limitations &amp; MEL</h3>
+                    <ul class="curriculum-list">
+                        <li>Aircraft Limitations</li>
+                        <li>MEL Understanding</li>
+                        <li>Configuration Deviations</li>
+                        <li>Operational Limitations</li>
+                        <li>Performance Penalties</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt">
+        <div class="container">
+            <div style="text-align:center;">
+                <p class="section-label">Course Details</p>
+                <h2 class="section-title">Program Specifications</h2>
+            </div>
+            <div class="details-grid">
+                <div class="detail-item">
+                    <div class="detail-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <div class="detail-content">
+                        <h4>Duration</h4>
+                        <p>4-6 weeks intensive preparation program</p>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <div class="detail-content">
+                        <h4>Success Rate</h4>
+                        <p>95% of students pass type rating on first attempt</p>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                    </div>
+                    <div class="detail-content">
+                        <h4>Study Materials</h4>
+                        <p>Comprehensive manuals, CBT modules and practice tests</p>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <div class="detail-content">
+                        <h4>Learning Mode</h4>
+                        <p>Blended learning: Online + Classroom sessions</p>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <div class="detail-content">
+                        <h4>Expert Instructors</h4>
+                        <p>Type-rated pilots with airline experience</p>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <div class="detail-content">
+                        <h4>Certification</h4>
+                        <p>Course completion certificate provided</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="course-cta">
+        <div class="container">
+            <h2>Ready to Excel in Your Type Rating?</h2>
+            <p>Join our Pre Type Rating Preparation course and increase your chances of success. Our comprehensive program ensures you're fully prepared for the challenges ahead.</p>
+            <div class="ctas">
+                <a href="../../contact.html" class="btn btn-primary" style="padding:.9rem 2.25rem;font-size:1rem;">Enrol Today</a>
+                <a href="../../contact.html" class="btn-outline-white">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="../../script.js"></script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Havoc Aviation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .contact-section { padding: 6rem 0; background: var(--bg-light); }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+        .contact-info { padding-right: 2rem; }
+        .info-item { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 2rem; }
+        .info-icon { color: var(--primary-color); background: var(--white); padding: 0.75rem; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .info-content h4 { font-size: 1.1rem; color: var(--secondary-color); margin-bottom: 0.25rem; }
+        .info-content p { color: var(--text-light); font-size: 0.9rem; }
+        
+        .contact-form-box { background: var(--white); padding: 3rem; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label { display: block; font-size: 0.85rem; font-weight: 500; margin-bottom: 0.5rem; color: var(--text-dark); }
+        .form-control { width: 100%; padding: 0.8rem 1rem; border: 1px solid var(--border-color); border-radius: 8px; font-family: inherit; font-size: 0.95rem; transition: border-color 0.3s; }
+        .form-control:focus { outline: none; border-color: var(--primary-color); }
+        
+        .map-container { margin-top: 3rem; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.05); background: var(--white); padding: 1rem; position: relative; }
+        .map-placeholder { width: 100%; height: 300px; background: #e2e8f0 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,100 M100,0 L0,100" stroke="%23cbd5e1" stroke-width="0.5"/></svg>'); border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+        .map-card { position: absolute; bottom: 2rem; left: 2rem; background: var(--white); padding: 1.5rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        
+        .contact-content h1 { font-size: 2.8rem; margin-bottom: 1.5rem; line-height: 1.2; }
+        
+        @media (max-width: 992px) {
+            .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .contact-info { padding-right: 0; }
+            .contact-section { padding: 8rem 0 4rem 0; }
+        }
+        @media (max-width: 768px) {
+            .contact-form-box { padding: 2rem 1.5rem; }
+            .contact-content h1 { font-size: 2.4rem; }
+            .map-card { position: relative; bottom: 0; left: 0; margin-top: 1rem; box-shadow: none; border: 1px solid var(--border-color); }
+            .map-container { padding: 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header" style="background: var(--white); position: relative; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+        <div class="container">
+            <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 0.75rem; text-decoration: none;">
+                <img src="assets/logo_transparent.png" alt="Havoc Aviation Logo" style="height: 58px; width: auto; ">
+                <div style="display: flex; flex-direction: column; justify-content: center;">
+                    <span style="font-size: 1.4rem; font-weight: 900; color: var(--secondary-color); line-height: 1;">Havoc Aviation</span>
+                    <span style="font-size: 0.6rem; font-weight: 700; color: var(--primary-color); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px;">Aviation &amp; Aerospace Training Institute</span>
+                </div>
+            </a>
+            
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <div class="nav-item dropdown">
+                    <a href="programs.html" class="dropdown-toggle">Programs <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-item has-submenu">
+                            <a href="programs.html#cpl">CPL Ground Classes</a>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            <div class="submenu">
+                                <a href="programs/cpl/cpl-air-navigation.html" class="submenu-item">Navigation & Flight Planning</a>
+                                <a href="programs/cpl/cpl-aviation-meteorology.html" class="submenu-item">Aviation Meteorology</a>
+                                <a href="programs/cpl/cpl-air-regulations.html" class="submenu-item">Air Law & Regulations</a>
+                                <a href="programs/cpl/cpl-tech-general.html" class="submenu-item">Aircraft Technical (General)</a>
+                                <a href="programs/cpl/cpl-tech-specific.html" class="submenu-item">Aircraft Technical (Specific)</a>
+                                <a href="programs/cpl/cpl-rtr-a.html" class="submenu-item">Radio Telephony (RTR-A)</a>
+                            </div>
+                        </div>
+                        <div class="dropdown-item has-submenu">
+                            <a href="programs.html#atpl">ATPL Ground Classes</a>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            <div class="submenu">
+                                <a href="programs/atpl/atpl-general-navigation.html" class="submenu-item">General Navigation</a>
+                                <a href="programs/atpl/atpl-radio-aids.html" class="submenu-item">Radio Aids and Instruments</a>
+                                <a href="programs/atpl/atpl-meteorology.html" class="submenu-item">Air Meteorology</a>
+                                <a href="programs/atpl/atpl-viva.html" class="submenu-item">ATPL Viva</a>
+                            </div>
+                        </div>
+                        <a href="programs/cadet-preparation.html" class="dropdown-item">Airline Cadet Pilot Preparation</a>
+                        <a href="programs/flight-training.html" class="dropdown-item">Flight Training</a>
+                        <a href="programs/type-rating/pre-type-rating.html" class="dropdown-item">Pre Type Rating Preparation</a>
+                        <a href="programs/type-rating/post-type-rating.html" class="dropdown-item">Post Type Rating Preparation</a>
+                        <a href="programs/type-rating/type-rating.html" class="dropdown-item">Type Rating (A320 / B737 / ATR / Others)</a>
+                        <div class="dropdown-item has-submenu">
+                            <a href="programs.html#selection">Airline Selection Preparation</a>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            <div class="submenu">
+                                <a href="programs/selection/selection-overview.html" class="submenu-item">Overview</a>
+                                <a href="programs/selection/selection-written-exam.html" class="submenu-item">Airline Written Exam Prep</a>
+                                <a href="programs/selection/selection-psychometric.html" class="submenu-item">Psychometric and Aptitude Assessment</a>
+                                <a href="programs/selection/selection-interview.html" class="submenu-item">Group Discussion and Personal Interview</a>
+                                <a href="programs/selection/selection-sim.html" class="submenu-item">Sim Assessment</a>
+                            </div>
+                        </div>
+                        <a href="programs/simulator-assessment-prep.html" class="dropdown-item">Simulator Assessment Prep</a>
+                        <a href="programs.html#career" class="dropdown-item">Career Counseling & Planning</a>
+                    </div>
+                </div>
+                <a href="technology.html">Technology</a>
+                <a href="about.html">About</a>
+                <a href="careers.html">Careers</a>
+                <a href="contact.html" class="active">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                
+                <a href="contact.html" class="btn btn-primary">Enquire Now &rarr;</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contact Content -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                
+                <!-- Left Side: Info -->
+                <div class="contact-info contact-content">
+                    <p style="color: var(--primary-color); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; margin-bottom: 1rem; letter-spacing: 1px;">GET IN TOUCH</p>
+                    <h1>Ready to Start<br>Your Aviation Journey?</h1>
+                    <p style="font-size: 1.05rem; color: #555; margin-bottom: 3rem;">Have questions? We're here to help. Reach out to us and take the first step towards a successful aviation career.</p>
+
+                    <div class="info-item">
+                        <div class="info-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+                        <div class="info-content">
+                            <h4>+91 95355 45654</h4>
+                            <p>Call us for more information</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+                        <div class="info-content">
+                            <h4>grpsabharwal@gmail.com</h4>
+                            <p>Email us anytime</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                        <div class="info-content">
+                            <h4>Bengaluru, Karnataka</h4>
+                            <p>Bus Station 85, Kengal Hanumanthaiah Rd, Sudhama Nagar, Bengaluru - 560027</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                        <div class="info-content">
+                            <h4>Mon - Sat: 10:00 AM - 6:00 PM</h4>
+                            <p>Sunday: Holiday</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side: Form -->
+                <div>
+
+
+                    <div class="map-container">
+                        <div class="map-placeholder"></div>
+                        <div class="map-card">
+                            <h3 style="font-size: 1.1rem; margin-bottom: 0.25rem;">Havoc Aviation</h3>
+                            <p style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 1rem;">Bengaluru, Karnataka</p>
+                            <a href="#" style="color: var(--primary-color); font-weight: 600; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.5rem;">View on Google Maps &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <footer class="footer-cta">
+        <div class="container">
+            <h2>HIGHER SKILLS.<br>BRIGHTER HORIZONS.</h2>
+            <a href="contact.html" class="btn btn-primary" style="padding: 1rem 2rem; font-size: 1.1rem;">Join Havoc Aviation &rarr;</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+

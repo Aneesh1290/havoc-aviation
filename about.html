@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Havoc Aviation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .about-section { padding: 4rem 0 6rem 0; background: var(--white); }
+        .about-top-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; margin-bottom: 3rem; }
+        
+        .about-hero-block { background: var(--bg-light); border-radius: 24px; position: relative; overflow: hidden; display: flex; align-items: center; }
+        .about-hero-img-wrapper { position: absolute; inset: 0; width: 100%; height: 100%; }
+        .about-hero-img-wrapper img { width: 100%; height: 100%; object-fit: cover; object-position: right center; }
+        .about-hero-gradient { position: absolute; inset: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(248, 250, 252, 1) 0%, rgba(248, 250, 252, 0.9) 35%, rgba(248, 250, 252, 0) 100%); z-index: 1; }
+        .about-hero-content { position: relative; z-index: 2; width: 100%; max-width: 580px; padding: 5rem 4rem; }
+        
+        .about-points-block { background: var(--bg-light); border-radius: 24px; display: flex; flex-direction: column; overflow: hidden; }
+        .point-item { flex: 1; display: flex; gap: 1.5rem; align-items: center; padding: 0 2.5rem; border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .point-item:last-child { border-bottom: none; }
+        .point-icon { color: var(--secondary-color); display: flex; align-items: center; justify-content: center; }
+        .point-content h3 { font-size: 1.15rem; margin-bottom: 0.25rem; color: var(--secondary-color); font-weight: 700; }
+        .point-content p { color: var(--text-light); font-size: 0.95rem; line-height: 1.5; }
+        
+        .about-highlights-block { background: var(--bg-light); border-radius: 24px; padding: 3rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; align-items: start; }
+        .highlight-item { display: flex; gap: 1rem; align-items: center; }
+        .highlight-icon { color: var(--secondary-color); display: flex; align-items: center; justify-content: center; }
+        .highlight-title { font-weight: 700; margin-bottom: 0.25rem; font-size: 0.95rem; color: var(--secondary-color); }
+        .highlight-desc { font-size: 0.85rem; color: var(--text-light); line-height: 1.4; }
+
+        .about-hero-content p.subtitle { color: var(--text-light); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 1rem; letter-spacing: 2px; }
+        .about-hero-content h1 { color: var(--secondary-color); font-size: 3.2rem; margin-bottom: 1.5rem; line-height: 1.15; font-weight: 800; }
+        .about-hero-content p.desc { font-size: 1.05rem; color: var(--secondary-color); font-weight: 500; margin-bottom: 2.5rem; line-height: 1.6; }
+
+        @media (max-width: 992px) {
+            .about-section { padding: 8rem 0 4rem 0; }
+            .about-top-grid { grid-template-columns: 1fr; }
+            .about-highlights-block { grid-template-columns: repeat(2, 1fr); padding: 2rem; }
+            .about-hero-content { padding: 4rem 2rem; max-width: 100%; }
+            .about-hero-block { min-height: 400px; }
+        }
+        @media (max-width: 768px) {
+            .about-highlights-block { grid-template-columns: 1fr; }
+            .about-hero-content { padding: 3rem 1.5rem; }
+            .about-hero-content h1 { font-size: 2.2rem; }
+            .about-hero-gradient { background: linear-gradient(to right, rgba(248, 250, 252, 1) 0%, rgba(248, 250, 252, 0.95) 60%, rgba(248, 250, 252, 0.5) 100%); }
+            .point-item { padding: 1.25rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header" style="background: var(--white); position: relative; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+        <div class="container">
+            <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 0.75rem; text-decoration: none;">
+                <img src="assets/logo_transparent.png" alt="Havoc Aviation Logo" style="height: 58px; width: auto; ">
+                <div style="display: flex; flex-direction: column; justify-content: center;">
+                    <span style="font-size: 1.4rem; font-weight: 900; color: var(--secondary-color); line-height: 1;">Havoc Aviation</span>
+                    <span style="font-size: 0.6rem; font-weight: 700; color: var(--primary-color); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px;">Aviation &amp; Aerospace Training Institute</span>
+                </div>
+            </a>
+            
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <div class="nav-item dropdown">
+                    <a href="programs.html" class="dropdown-toggle">Programs <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-item has-submenu">
+                            <a href="programs.html#cpl">CPL Ground Classes</a>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            <div class="submenu">
+                                <a href="programs/cpl/cpl-air-navigation.html" class="submenu-item">Navigation & Flight Planning</a>
+                                <a href="programs/cpl/cpl-aviation-meteorology.html" class="submenu-item">Aviation Meteorology</a>
+                                <a href="programs/cpl/cpl-air-regulations.html" class="submenu-item">Air Law & Regulations</a>
+                                <a href="programs/cpl/cpl-tech-general.html" class="submenu-item">Aircraft Technical (General)</a>
+                                <a href="programs/cpl/cpl-tech-specific.html" class="submenu-item">Aircraft Technical (Specific)</a>
+                                <a href="programs/cpl/cpl-rtr-a.html" class="submenu-item">Radio Telephony (RTR-A)</a>
+                            </div>
+                        </div>
+                        <div class="dropdown-item has-submenu">
+                            <a href="programs.html#atpl">ATPL Ground Classes</a>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            <div class="submenu">
+                                <a href="programs/atpl/atpl-general-navigation.html" class="submenu-item">General Navigation</a>
+                                <a href="programs/atpl/atpl-radio-aids.html" class="submenu-item">Radio Aids and Instruments</a>
+                                <a href="programs/atpl/atpl-meteorology.html" class="submenu-item">Air Meteorology</a>
+                                <a href="programs/atpl/atpl-viva.html" class="submenu-item">ATPL Viva</a>
+                            </div>
+                        </div>
+                        <a href="programs/cadet-preparation.html" class="dropdown-item">Airline Cadet Pilot Preparation</a>
+                        <a href="programs/flight-training.html" class="dropdown-item">Flight Training</a>
+                        <a href="programs/type-rating/pre-type-rating.html" class="dropdown-item">Pre Type Rating Preparation</a>
+                        <a href="programs/type-rating/post-type-rating.html" class="dropdown-item">Post Type Rating Preparation</a>
+                        <a href="programs/type-rating/type-rating.html" class="dropdown-item">Type Rating (A320 / B737 / ATR / Others)</a>
+                        <div class="dropdown-item has-submenu">
+                            <a href="programs.html#selection">Airline Selection Preparation</a>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            <div class="submenu">
+                                <a href="programs/selection/selection-overview.html" class="submenu-item">Overview</a>
+                                <a href="programs/selection/selection-written-exam.html" class="submenu-item">Airline Written Exam Prep</a>
+                                <a href="programs/selection/selection-psychometric.html" class="submenu-item">Psychometric and Aptitude Assessment</a>
+                                <a href="programs/selection/selection-interview.html" class="submenu-item">Group Discussion and Personal Interview</a>
+                                <a href="programs/selection/selection-sim.html" class="submenu-item">Sim Assessment</a>
+                            </div>
+                        </div>
+                        <a href="programs/simulator-assessment-prep.html" class="dropdown-item">Simulator Assessment Prep</a>
+                        <a href="programs.html#career" class="dropdown-item">Career Counseling & Planning</a>
+                    </div>
+                </div>
+                <a href="technology.html">Technology</a>
+                <a href="about.html" class="active">About</a>
+                <a href="careers.html">Careers</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                
+                <a href="contact.html" class="btn btn-primary">Enquire Now &rarr;</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Content -->
+    <section class="about-section">
+        <div class="container">
+            
+            <!-- Top Grid (Hero & Points) -->
+            <div class="about-top-grid">
+                
+                <!-- Left Hero Block -->
+                <div class="about-hero-block">
+                    <div class="about-hero-img-wrapper">
+                        <img src="assets/building.jpg" alt="Havoc Aviation Building">
+                        <div class="about-hero-gradient"></div>
+                    </div>
+                    
+                    <div class="about-hero-content">
+                        <p class="subtitle">ABOUT <span style="color: var(--primary-color);">HAVOC AVIATION</span></p>
+                        <h1>A Passion for<br>Aviation. A Commitment<br>to Your Future.</h1>
+                        <p class="desc">At Havoc Aviation, we believe that taking to the skies is more than just a career choice—it's a lifelong journey fueled by precision and passion. We are dedicated to crafting aviation excellence and guiding the next generation of industry leaders.</p>
+                        <a href="#" class="btn btn-primary">Our Story &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Right Points Block -->
+                <div class="about-points-block">
+                    
+                    <div class="point-item">
+                        <div class="point-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/><line x1="22" y1="2" x2="15.5" y2="8.5"/></svg>
+                        </div>
+                        <div class="point-content">
+                            <h3>Our Mission</h3>
+                            <p>To create world-class aviation professionals for a safer sky.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="point-item">
+                        <div class="point-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                        </div>
+                        <div class="point-content">
+                            <h3>Our Vision</h3>
+                            <p>To be a trusted global name in aviation training.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="point-item">
+                        <div class="point-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </div>
+                        <div class="point-content">
+                            <h3>Our Values</h3>
+                            <p>Safety. Excellence. Integrity. Opportunity.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Bottom Highlights Block -->
+            <div class="about-highlights-block">
+                <div class="highlight-item">
+                    <div class="highlight-icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <div>
+                        <div class="highlight-title">Active Airline Pilots</div>
+                        <div class="highlight-desc">Learn directly from seasoned industry veterans.</div>
+                    </div>
+                </div>
+                
+                <div class="highlight-item">
+                    <div class="highlight-icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+                    </div>
+                    <div>
+                        <div class="highlight-title">Comprehensive Syllabus</div>
+                        <div class="highlight-desc">From ground school to type rating, we cover it all.</div>
+                    </div>
+                </div>
+                
+                <div class="highlight-item">
+                    <div class="highlight-icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <div>
+                        <div class="highlight-title">Advanced Simulators</div>
+                        <div class="highlight-desc">State-of-the-art training environments.</div>
+                    </div>
+                </div>
+                
+                <div class="highlight-item">
+                    <div class="highlight-icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <div>
+                        <div class="highlight-title">Personalized Approach</div>
+                        <div class="highlight-desc">Tailored guidance for every student's journey.</div>
+                    </div>
+                </div>
+
+                <div class="highlight-item">
+                    <div class="highlight-icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <div>
+                        <div class="highlight-title">Proven Track Record</div>
+                        <div class="highlight-desc">High success rates in airline placements.</div>
+                    </div>
+                </div>
+
+                <div class="highlight-item">
+                    <div class="highlight-icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <div>
+                        <div class="highlight-title">Flexible Scheduling</div>
+                        <div class="highlight-desc">Training modules designed around your availability.</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <footer class="footer-cta">
+        <div class="container">
+            <h2>HIGHER SKILLS.<br>BRIGHTER HORIZONS.</h2>
+            <a href="contact.html" class="btn btn-primary" style="padding: 1rem 2rem; font-size: 1.1rem;">Join Havoc Aviation &rarr;</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
