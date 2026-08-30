@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DGCA & Regulatory Disclaimer | Havoc Aviation</title>
+    <title>Disclaimer | Havoc Aviation</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
@@ -124,42 +124,18 @@
 
     <style>
         .disclaimer-section { padding: 4rem 0 6rem 0; background: var(--white); }
-        .disclaimer-content { max-width: 900px; margin: 0 auto; background: var(--bg-light); padding: 4rem; border-radius: 24px; }
-        .disclaimer-content h1 { font-size: 2.5rem; color: var(--secondary-color); margin-bottom: 2rem; font-weight: 800; text-align: center; }
-        .disclaimer-content h2 { font-size: 1.5rem; color: var(--secondary-color); margin-top: 3rem; margin-bottom: 1rem; font-weight: 700; border-bottom: 2px solid rgba(0,0,0,0.05); padding-bottom: 0.5rem; }
-        .disclaimer-content p { color: var(--text-light); font-size: 1rem; line-height: 1.7; margin-bottom: 1.25rem; }
-        
-        /* Global Footer styles to inject */
-        .site-footer { background: var(--secondary-color); color: rgba(255,255,255,0.7); padding: 4rem 0 2rem; margin-top: 0; font-size: 0.9rem; }
-        .site-footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; flex-direction: column; gap: 2rem; }
-        .site-footer-top { border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 2rem; }
-        .footer-notice-title { color: #fff; font-weight: 700; margin-bottom: 0.5rem; font-size: 1.05rem; }
-        .footer-notice-text { line-height: 1.6; margin-bottom: 1rem; }
-        .footer-link-readmore { color: var(--primary-color); font-weight: 600; text-decoration: none; transition: color 0.2s; }
-        .footer-link-readmore:hover { color: #fff; }
-        .site-footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-        .footer-links { display: flex; gap: 1.5rem; }
-        .footer-links a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
-        .footer-links a:hover { color: #fff; }
-        
-        /* Program Regulatory Note styles */
-        .prog-reg-note { max-width: 1200px; margin: 2rem auto 4rem; padding: 2rem; background: #fff5f5; border-left: 4px solid var(--primary-color); border-radius: 8px; }
-        .prog-reg-title { font-weight: 700; color: var(--secondary-color); margin-bottom: 0.5rem; font-size: 1.05rem; }
-        .prog-reg-text { color: var(--text-light); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem; }
-        
-        @media (max-width: 768px) {
-            .disclaimer-content { padding: 2rem 1.5rem; }
-            .site-footer-bottom { flex-direction: column; align-items: flex-start; }
-            .footer-links { flex-direction: column; gap: 0.75rem; }
-            .prog-reg-note { margin: 2rem 1rem 4rem; }
-        }
+        .disclaimer-container { max-width: 900px; margin: 0 auto; background: var(--bg-light); padding: 4rem; border-radius: 24px; }
+        .disclaimer-container h1 { font-size: 2.5rem; color: var(--secondary-color); margin-bottom: 2rem; font-weight: 800; text-align: center; }
+        .disclaimer-container h2 { font-size: 1.5rem; color: var(--secondary-color); margin-top: 3rem; margin-bottom: 1rem; font-weight: 700; border-bottom: 2px solid rgba(0,0,0,0.05); padding-bottom: 0.5rem; }
+        .disclaimer-container p { color: var(--text-light); font-size: 1rem; line-height: 1.7; margin-bottom: 1.25rem; }
+        .company-info { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(0,0,0,0.1); text-align: center; font-weight: 600; color: var(--secondary-color); }
+        @media (max-width: 768px) { .disclaimer-container { padding: 2rem 1.5rem; } }
     </style>
     
-    <!-- Disclaimer Content -->
     <section class="disclaimer-section">
         <div class="container">
-            <div class="disclaimer-content">
-                <h1>DGCA & Regulatory Disclaimer</h1>
+            <div class="disclaimer-container">
+                <h1>DISCLAIMER</h1>
                 
                 <h2>Website & Programme Disclosure</h2>
                 <p>Havoc Aviation is an independent aviation education, coaching, simulation and career-preparation institute.</p>
@@ -181,8 +157,20 @@
                 <p>Our objective is to provide a strong educational foundation and practical exposure to aviation - from aeromodelling and RC flying to professional flight simulation, aviation ground subjects and career preparation - while maintaining a clear distinction between educational/coaching services and regulated aviation training.</p>
                 <p>Havoc Aviation will comply with applicable DGCA and Government of India requirements and will obtain the necessary approvals/authorizations before offering any programme for which such regulatory approval is mandatory.</p>
                 
+                <h2>Recommended Website Wording</h2>
+                <p>To avoid any implication that Havoc Aviation itself presently issues a Commercial Pilot Licence, the headline "Become a Certified Commercial Pilot" should preferably be replaced with wording such as:</p>
+                <p>Prepare for Your Commercial Pilot Journey<br>Start Your Journey Towards Becoming a Commercial Pilot</p>
+                
                 <h2>General Notice</h2>
                 <p>Regulatory requirements, examination procedures and approval categories may change from time to time. Students and parents should independently verify the latest applicable requirements directly with DGCA or the relevant competent authority before making decisions concerning licensing, approved flight training, examinations, medical certification, type ratings or other regulated aviation activities.</p>
+                
+                <div class="company-info">
+                    HAVOC AVIATION<br>
+                    From Aeromodelling to Aviation<br>
+                    A SAB GRP Venture<br>
+                    Operated by Sabharwal Aviation Services Private Limited<br>
+                    www.havocaviation.in
+                </div>
             </div>
         </div>
     </section>
@@ -193,6 +181,21 @@
             <a href="contact" class="btn btn-primary" style="padding: 1rem 2rem; font-size: 1.1rem;">Join Havoc Aviation &rarr;</a>
         </div>
     </footer>
+
+    <!-- Global Footer Links -->
+    <footer style="background: var(--bg-light); padding: 3rem 0; text-align: center; border-top: 1px solid rgba(0,0,0,0.05);">
+        <div class="container">
+            <div style="display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap;">
+                <a href="privacy" style="color: var(--text-light); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: color 0.2s;">Privacy Policy</a>
+                <a href="refund" style="color: var(--text-light); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: color 0.2s;">Refund Policy</a>
+                <a href="disclaimer" style="color: var(--text-light); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: color 0.2s;">Disclaimer</a>
+            </div>
+            <div style="margin-top: 2rem; color: var(--text-light); font-size: 0.85rem; opacity: 0.7;">
+                &copy; 2026 Havoc Aviation. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
 <script src="script.js"></script>
 </body>
 </html>
