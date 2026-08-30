@@ -63,6 +63,31 @@
             .info-grid{grid-template-columns:1fr;}
         }
     </style>
+
+    <style>
+        .site-footer { background: var(--secondary-color); color: rgba(255,255,255,0.7); padding: 4rem 0 2rem; margin-top: 0; font-size: 0.9rem; }
+        .site-footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; flex-direction: column; gap: 2rem; }
+        .site-footer-top { border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 2rem; }
+        .footer-notice-title { color: #fff; font-weight: 700; margin-bottom: 0.5rem; font-size: 1.05rem; }
+        .footer-notice-text { line-height: 1.6; margin-bottom: 1rem; }
+        .footer-link-readmore { color: var(--primary-color); font-weight: 600; text-decoration: none; transition: color 0.2s; }
+        .footer-link-readmore:hover { color: #fff; }
+        .site-footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+        .footer-links { display: flex; gap: 1.5rem; }
+        .footer-links a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
+        .footer-links a:hover { color: #fff; }
+        
+        .prog-reg-note { max-width: 1200px; margin: 2rem auto 4rem; padding: 2rem; background: #fff5f5; border-left: 4px solid var(--primary-color); border-radius: 8px; }
+        .prog-reg-title { font-weight: 700; color: var(--secondary-color); margin-bottom: 0.5rem; font-size: 1.05rem; }
+        .prog-reg-text { color: var(--text-light); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem; }
+        
+        @media (max-width: 768px) {
+            .site-footer-bottom { flex-direction: column; align-items: flex-start; }
+            .footer-links { flex-direction: column; gap: 0.75rem; }
+            .prog-reg-note { margin: 2rem 1rem 4rem; }
+        }
+    </style>
+        
 </head>
 <body>
     <header class="header" style="background:var(--white);position:relative;box-shadow:0 2px 10px rgba(0,0,0,.05);">
@@ -263,7 +288,35 @@
         </div>
     </section>
 
-    <script src="../../script.js"></script>
+    
+    
+    <!-- Regulatory Note -->
+    <div class="prog-reg-note">
+        <div class="prog-reg-title">Regulatory Note</div>
+        <div class="prog-reg-text">This programme is provided for educational, coaching, preparation or familiarisation purposes, as applicable. References to DGCA examinations, CPL, ATPL, Type Rating, aircraft types or other professional aviation qualifications do not by themselves imply DGCA approval, authorization or certification by Havoc Aviation.</div>
+        <a href="../../dgca-disclaimer" class="footer-link-readmore">Read Full DGCA Disclaimer &rarr;</a>
+    </div>
+
+    <!-- Global Site Footer -->
+    <footer class="site-footer">
+        <div class="site-footer-inner">
+            <div class="site-footer-top">
+                <div class="footer-notice-title">DGCA & Regulatory Notice</div>
+                <div class="footer-notice-text">Havoc Aviation is an independent aviation education, coaching, simulation and career-preparation institute. Havoc Aviation does not represent itself as a DGCA-approved FTO, ATO or other DGCA-approved/licensed organisation unless specifically stated for a particular programme. References to CPL, ATPL, Type Rating, Flight Training, Airline Cadet Programmes, aircraft types and other professional aviation qualifications describe educational, preparatory, coaching or familiarisation services and do not by themselves imply DGCA approval or certification.</div>
+                <a href="../../dgca-disclaimer" class="footer-link-readmore">Read Full DGCA & Regulatory Disclaimer &rarr;</a>
+            </div>
+            <div class="site-footer-bottom">
+                <div class="footer-copyright">&copy; 2026 Havoc Aviation. All rights reserved.</div>
+                <div class="footer-links">
+                    <a href="../../dgca-disclaimer">DGCA & Regulatory Disclaimer</a>
+                    <a href="privacy">Privacy Policy</a>
+                    <a href="terms">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<script src="../../script.js"></script>
 </body>
 </html>
 

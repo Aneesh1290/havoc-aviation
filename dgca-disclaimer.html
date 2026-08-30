@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Havoc Aviation</title>
+    <title>DGCA & Regulatory Disclaimer | Havoc Aviation</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
@@ -48,31 +48,6 @@
             .point-item { padding: 1.25rem 1.5rem; }
         }
     </style>
-
-    <style>
-        .site-footer { background: var(--secondary-color); color: rgba(255,255,255,0.7); padding: 4rem 0 2rem; margin-top: 0; font-size: 0.9rem; }
-        .site-footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; flex-direction: column; gap: 2rem; }
-        .site-footer-top { border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 2rem; }
-        .footer-notice-title { color: #fff; font-weight: 700; margin-bottom: 0.5rem; font-size: 1.05rem; }
-        .footer-notice-text { line-height: 1.6; margin-bottom: 1rem; }
-        .footer-link-readmore { color: var(--primary-color); font-weight: 600; text-decoration: none; transition: color 0.2s; }
-        .footer-link-readmore:hover { color: #fff; }
-        .site-footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-        .footer-links { display: flex; gap: 1.5rem; }
-        .footer-links a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
-        .footer-links a:hover { color: #fff; }
-        
-        .prog-reg-note { max-width: 1200px; margin: 2rem auto 4rem; padding: 2rem; background: #fff5f5; border-left: 4px solid var(--primary-color); border-radius: 8px; }
-        .prog-reg-title { font-weight: 700; color: var(--secondary-color); margin-bottom: 0.5rem; font-size: 1.05rem; }
-        .prog-reg-text { color: var(--text-light); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem; }
-        
-        @media (max-width: 768px) {
-            .site-footer-bottom { flex-direction: column; align-items: flex-start; }
-            .footer-links { flex-direction: column; gap: 0.75rem; }
-            .prog-reg-note { margin: 2rem 1rem 4rem; }
-        }
-    </style>
-        
 </head>
 <body>
 
@@ -147,132 +122,72 @@
         </div>
     </header>
 
-    <!-- About Content -->
-    <section class="about-section">
+    <style>
+        .disclaimer-section { padding: 4rem 0 6rem 0; background: var(--white); }
+        .disclaimer-content { max-width: 900px; margin: 0 auto; background: var(--bg-light); padding: 4rem; border-radius: 24px; }
+        .disclaimer-content h1 { font-size: 2.5rem; color: var(--secondary-color); margin-bottom: 2rem; font-weight: 800; text-align: center; }
+        .disclaimer-content h2 { font-size: 1.5rem; color: var(--secondary-color); margin-top: 3rem; margin-bottom: 1rem; font-weight: 700; border-bottom: 2px solid rgba(0,0,0,0.05); padding-bottom: 0.5rem; }
+        .disclaimer-content p { color: var(--text-light); font-size: 1rem; line-height: 1.7; margin-bottom: 1.25rem; }
+        
+        /* Global Footer styles to inject */
+        .site-footer { background: var(--secondary-color); color: rgba(255,255,255,0.7); padding: 4rem 0 2rem; margin-top: 0; font-size: 0.9rem; }
+        .site-footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; flex-direction: column; gap: 2rem; }
+        .site-footer-top { border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 2rem; }
+        .footer-notice-title { color: #fff; font-weight: 700; margin-bottom: 0.5rem; font-size: 1.05rem; }
+        .footer-notice-text { line-height: 1.6; margin-bottom: 1rem; }
+        .footer-link-readmore { color: var(--primary-color); font-weight: 600; text-decoration: none; transition: color 0.2s; }
+        .footer-link-readmore:hover { color: #fff; }
+        .site-footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+        .footer-links { display: flex; gap: 1.5rem; }
+        .footer-links a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
+        .footer-links a:hover { color: #fff; }
+        
+        /* Program Regulatory Note styles */
+        .prog-reg-note { max-width: 1200px; margin: 2rem auto 4rem; padding: 2rem; background: #fff5f5; border-left: 4px solid var(--primary-color); border-radius: 8px; }
+        .prog-reg-title { font-weight: 700; color: var(--secondary-color); margin-bottom: 0.5rem; font-size: 1.05rem; }
+        .prog-reg-text { color: var(--text-light); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem; }
+        
+        @media (max-width: 768px) {
+            .disclaimer-content { padding: 2rem 1.5rem; }
+            .site-footer-bottom { flex-direction: column; align-items: flex-start; }
+            .footer-links { flex-direction: column; gap: 0.75rem; }
+            .prog-reg-note { margin: 2rem 1rem 4rem; }
+        }
+    </style>
+    
+    <!-- Disclaimer Content -->
+    <section class="disclaimer-section">
         <div class="container">
-            
-            <!-- Top Grid (Hero & Points) -->
-            <div class="about-top-grid">
+            <div class="disclaimer-content">
+                <h1>DGCA & Regulatory Disclaimer</h1>
                 
-                <!-- Left Hero Block -->
-                <div class="about-hero-block">
-                    <div class="about-hero-img-wrapper">
-                        <img src="assets/building.jpg" alt="Havoc Aviation Building">
-                        <div class="about-hero-gradient"></div>
-                    </div>
-                    
-                    <div class="about-hero-content">
-                        <p class="subtitle">ABOUT <span style="color: var(--primary-color);">HAVOC AVIATION</span></p>
-                        <h1>A Passion for<br>Aviation. A Commitment<br>to Your Future.</h1>
-                        <p class="desc">At Havoc Aviation, we believe that taking to the skies is more than just a career choice—it's a lifelong journey fueled by precision and passion. We are dedicated to crafting aviation excellence and guiding the next generation of industry leaders.</p>
-                        <a href="#" class="btn btn-primary">Our Story &rarr;</a>
-                    </div>
-                </div>
-
-                <!-- Right Points Block -->
-                <div class="about-points-block">
-                    
-                    <div class="point-item">
-                        <div class="point-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/><line x1="22" y1="2" x2="15.5" y2="8.5"/></svg>
-                        </div>
-                        <div class="point-content">
-                            <h3>Our Mission</h3>
-                            <p>To create world-class aviation professionals for a safer sky.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="point-item">
-                        <div class="point-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                        </div>
-                        <div class="point-content">
-                            <h3>Our Vision</h3>
-                            <p>To be a trusted global name in aviation training.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="point-item">
-                        <div class="point-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        </div>
-                        <div class="point-content">
-                            <h3>Our Values</h3>
-                            <p>Safety. Excellence. Integrity. Opportunity.</p>
-                        </div>
-                    </div>
-
-                </div>
+                <h2>Website & Programme Disclosure</h2>
+                <p>Havoc Aviation is an independent aviation education, coaching, simulation and career-preparation institute.</p>
+                <p>Havoc Aviation is not presently representing itself as a DGCA-approved Flying Training Organisation (FTO), Approved Training Organisation (ATO), or any other DGCA-approved/licensed organisation, unless specifically stated against a particular programme along with the applicable approval or authorization details.</p>
+                <p>Our programmes may include aviation theory and ground-school coaching, DGCA examination preparation, aviation career guidance, aeromodelling and RC flying education, flight-simulator training and familiarisation, airline selection preparation, simulator assessment preparation, and other aviation-related educational and skill-development activities.</p>
+                <p>Any reference on our website or promotional material to CPL, ATPL, DGCA examinations, RTR(A), Type Rating, Flight Training, Airline Cadet Programmes, aircraft types such as Airbus A320, Boeing B737 or ATR, or other professional aviation qualifications is intended to describe the relevant educational, preparatory, coaching or familiarisation programme offered by Havoc Aviation and should not, by itself, be interpreted as DGCA approval, authorization or certification.</p>
+                
+                <h2>Important Clarification</h2>
+                <p>Havoc Aviation does not issue a Commercial Pilot Licence (CPL), Airline Transport Pilot Licence (ATPL), Type Rating, DGCA licence, rating, endorsement or any other statutory aviation licence or certification.</p>
+                <p>All licences, ratings, examinations, flying-hour requirements, medical requirements, skill tests and other regulatory requirements applicable to professional pilots are governed by the Directorate General of Civil Aviation (DGCA), Government of India, and/or other competent authorities as applicable.</p>
+                <p>Where actual flight training, type-rating training, licence-creditable simulator training or any other regulated training is required, such training must be undertaken through an appropriately DGCA-approved/authorized organisation or facility, wherever such approval is required under applicable regulations.</p>
+                <p>Simulator sessions conducted on recreational, educational or non-approved training devices at Havoc Aviation are intended for learning, familiarisation, procedural understanding, practice and experience only and shall not be represented as DGCA-creditable flight or simulator hours unless the particular device, programme and organisation have received the necessary regulatory approval.</p>
+                
+                <h2>DGCA Examination Preparation</h2>
+                <p>Havoc Aviation may provide coaching and preparation for subjects relevant to DGCA examinations. However, admission to our coaching programme does not constitute registration with DGCA and does not guarantee eligibility, examination success, issuance of a licence, employment with an airline or completion of any regulatory requirement.</p>
+                <p>Students are responsible for satisfying the prevailing eligibility, medical, examination, flying experience and licensing requirements prescribed by DGCA and other competent authorities.</p>
+                
+                <h2>Our Objective</h2>
+                <p>Our objective is to provide a strong educational foundation and practical exposure to aviation - from aeromodelling and RC flying to professional flight simulation, aviation ground subjects and career preparation - while maintaining a clear distinction between educational/coaching services and regulated aviation training.</p>
+                <p>Havoc Aviation will comply with applicable DGCA and Government of India requirements and will obtain the necessary approvals/authorizations before offering any programme for which such regulatory approval is mandatory.</p>
+                
+                <h2>General Notice</h2>
+                <p>Regulatory requirements, examination procedures and approval categories may change from time to time. Students and parents should independently verify the latest applicable requirements directly with DGCA or the relevant competent authority before making decisions concerning licensing, approved flight training, examinations, medical certification, type ratings or other regulated aviation activities.</p>
             </div>
-
-            <!-- Bottom Highlights Block -->
-            <div class="about-highlights-block">
-                <div class="highlight-item">
-                    <div class="highlight-icon">
-                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                    </div>
-                    <div>
-                        <div class="highlight-title">Active Airline Pilots</div>
-                        <div class="highlight-desc">Learn directly from seasoned industry veterans.</div>
-                    </div>
-                </div>
-                
-                <div class="highlight-item">
-                    <div class="highlight-icon">
-                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
-                    </div>
-                    <div>
-                        <div class="highlight-title">Comprehensive Syllabus</div>
-                        <div class="highlight-desc">From ground school to type rating, we cover it all.</div>
-                    </div>
-                </div>
-                
-                <div class="highlight-item">
-                    <div class="highlight-icon">
-                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                    </div>
-                    <div>
-                        <div class="highlight-title">Advanced Simulators</div>
-                        <div class="highlight-desc">State-of-the-art training environments.</div>
-                    </div>
-                </div>
-                
-                <div class="highlight-item">
-                    <div class="highlight-icon">
-                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                    </div>
-                    <div>
-                        <div class="highlight-title">Personalized Approach</div>
-                        <div class="highlight-desc">Tailored guidance for every student's journey.</div>
-                    </div>
-                </div>
-
-                <div class="highlight-item">
-                    <div class="highlight-icon">
-                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                    </div>
-                    <div>
-                        <div class="highlight-title">Proven Track Record</div>
-                        <div class="highlight-desc">High success rates in airline placements.</div>
-                    </div>
-                </div>
-
-                <div class="highlight-item">
-                    <div class="highlight-icon">
-                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    </div>
-                    <div>
-                        <div class="highlight-title">Flexible Scheduling</div>
-                        <div class="highlight-desc">Training modules designed around your availability.</div>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </section>
 
-    <!-- Footer CTA -->
-    <footer class="footer-cta">
+<footer class="footer-cta">
         <div class="container">
             <h2>HIGHER SKILLS.<br>BRIGHTER HORIZONS.</h2>
             <a href="contact" class="btn btn-primary" style="padding: 1rem 2rem; font-size: 1.1rem;">Join Havoc Aviation &rarr;</a>
@@ -302,6 +217,3 @@
 <script src="script.js"></script>
 </body>
 </html>
-
-
-
