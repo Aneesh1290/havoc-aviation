@@ -528,7 +528,7 @@ div.dropdown-item > a {
 /* Fix Mobile Menu Overflow and Alignment */
 .mobile-menu-overlay {
     justify-content: flex-start !important;
-    padding-top: 7rem !important;
+    padding-top: 13rem !important;
     padding-bottom: 1.5rem !important;
     overflow-y: auto !important;
 }
@@ -562,7 +562,7 @@ div.dropdown-item > a {
     
     /* Course hero section needs slightly different padding to accommodate the header */
     .course-hero {
-        padding-top: 7rem !important;
+        padding-top: 13rem !important;
         padding-bottom: 1.5rem !important;
     }
     
@@ -646,3 +646,4 @@ div.dropdown-item > a {
         padding: 6px 10px;
     }
 }
+
