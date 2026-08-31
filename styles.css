@@ -580,29 +580,25 @@ div.dropdown-item > a {
     }
 }
 
-/* Centered Mobile Logo Setup */
+/* Expanded Left-Aligned Mobile Logo */
 @media (max-width: 1024px) {
     .header .container {
-        position: relative;
-        justify-content: center !important;
+        justify-content: space-between !important;
+        position: static;
     }
-    
-    .mobile-menu-btn {
-        position: absolute;
-        right: 1.5rem;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-    
     .header .logo {
-        margin: 0 auto;
+        margin: 0;
+        width: 85%;
+        max-width: 340px;
     }
-}
-
-/* Larger Mobile Logo */
-@media (max-width: 768px) {
     .header .logo img {
-        height: 110px !important;
+        width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+    }
+    .mobile-menu-btn {
+        position: static;
+        transform: none;
     }
 }
 
