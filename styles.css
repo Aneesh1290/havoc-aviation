@@ -580,25 +580,16 @@ div.dropdown-item > a {
     }
 }
 
-/* Expanded Left-Aligned Mobile Logo */
+/* Standard Mobile Logo */
 @media (max-width: 1024px) {
     .header .container {
         justify-content: space-between !important;
-        position: static;
-    }
-    .header .logo {
-        margin: 0;
-        width: 85%;
-        max-width: 340px;
+        position: relative;
     }
     .header .logo img {
-        width: 100% !important;
-        height: auto !important;
-        max-height: none !important;
-    }
-    .mobile-menu-btn {
-        position: static;
-        transform: none;
+        height: 65px !important;
+        width: auto !important;
+        max-width: 100% !important;
     }
 }
 
