@@ -620,53 +620,29 @@ div.dropdown-item > a {
 
 
 
-/* Havoc EFS Floating Widget */
-.efs-floating-widget {
-    position: fixed;
-    bottom: 30px;
-    left: 30px;
-    background: var(--white);
-    padding: 8px 16px 8px 8px;
-    border-radius: 50px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    z-index: 9999;
-    text-decoration: none;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 2px solid var(--primary-color);
+/* Announcement Bar */
+.announcement-bar {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 8px 15px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    width: 100%;
 }
-.efs-floating-widget:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+.announcement-bar a {
+    color: var(--white);
+    text-decoration: underline;
+    font-weight: 700;
+    margin-left: 10px;
+    transition: opacity 0.2s;
 }
-.efs-widget-icon {
-    background: rgba(220, 38, 38, 0.1);
-    width: 40px; height: 40px;
-    border-radius: 50%;
-    display: flex; justify-content: center; align-items: center;
-    font-size: 1.2rem;
-}
-.efs-widget-text {
-    display: flex; flex-direction: column;
-}
-.efs-widget-title {
-    color: var(--secondary-color);
-    font-weight: 800; font-size: 0.95rem; line-height: 1.2;
-}
-.efs-widget-subtitle {
-    color: var(--text-light);
-    font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px;
+.announcement-bar a:hover {
+    opacity: 0.8;
 }
 @media (max-width: 768px) {
-    .efs-floating-widget {
-        bottom: 20px; left: 20px;
-        padding: 6px 12px 6px 6px;
+    .announcement-bar {
+        font-size: 0.8rem;
+        padding: 6px 10px;
     }
-    .efs-widget-icon {
-        width: 34px; height: 34px; font-size: 1rem;
-    }
-    .efs-widget-title { font-size: 0.9rem; }
-    .efs-widget-subtitle { font-size: 0.65rem; }
 }
