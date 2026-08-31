@@ -587,7 +587,7 @@ div.dropdown-item > a {
         position: relative;
     }
     .header .logo img {
-        height: 65px !important;
+        height: 95px !important;
         width: auto !important;
         max-width: 100% !important;
     }
@@ -600,3 +600,4 @@ div.dropdown-item > a {
         padding-bottom: 0.5rem !important;
     }
 }
+
