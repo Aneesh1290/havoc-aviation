@@ -580,14 +580,23 @@ div.dropdown-item > a {
     }
 }
 
-/* Standard Mobile Logo */
+/* Centered Mobile Logo Setup */
 @media (max-width: 1024px) {
     .header .container {
-        justify-content: space-between !important;
         position: relative;
+        justify-content: center !important;
+    }
+    .header .logo {
+        margin: 0 auto;
+    }
+    .mobile-menu-btn {
+        position: absolute;
+        right: 1.5rem;
+        top: 50%;
+        transform: translateY(-50%);
     }
     .header .logo img {
-        height: 95px !important;
+        height: 115px !important;
         width: auto !important;
         max-width: 100% !important;
     }
@@ -600,4 +609,3 @@ div.dropdown-item > a {
         padding-bottom: 0.5rem !important;
     }
 }
-
