@@ -529,7 +529,7 @@ div.dropdown-item > a {
 .mobile-menu-overlay {
     justify-content: flex-start !important;
     padding-top: 7rem !important;
-    padding-bottom: 3rem !important;
+    padding-bottom: 1.5rem !important;
     overflow-y: auto !important;
 }
 
@@ -556,14 +556,14 @@ div.dropdown-item > a {
     .contact-section,
     .course-cta, 
     .footer-cta {
-        padding-top: 3rem !important;
-        padding-bottom: 3rem !important;
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
     }
     
     /* Course hero section needs slightly different padding to accommodate the header */
     .course-hero {
         padding-top: 7rem !important;
-        padding-bottom: 3rem !important;
+        padding-bottom: 1.5rem !important;
     }
     
     .programs-header {
@@ -571,3 +571,4 @@ div.dropdown-item > a {
         padding-bottom: 2rem !important;
     }
 }
+
