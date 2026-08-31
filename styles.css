@@ -579,3 +579,29 @@ div.dropdown-item > a {
         height: 75px !important;
     }
 }
+
+/* Centered Mobile Logo Setup */
+@media (max-width: 1024px) {
+    .header .container {
+        position: relative;
+        justify-content: center !important;
+    }
+    
+    .mobile-menu-btn {
+        position: absolute;
+        right: 1.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .header .logo {
+        margin: 0 auto;
+    }
+}
+
+/* Larger Mobile Logo */
+@media (max-width: 768px) {
+    .header .logo img {
+        height: 110px !important;
+    }
+}
