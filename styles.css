@@ -596,7 +596,7 @@ div.dropdown-item > a {
         transform: translateY(-50%);
     }
     .header .logo img {
-        height: 115px !important;
+        height: 135px !important;
         width: auto !important;
         max-width: 100% !important;
     }
@@ -609,3 +609,4 @@ div.dropdown-item > a {
         padding-bottom: 0.5rem !important;
     }
 }
+
