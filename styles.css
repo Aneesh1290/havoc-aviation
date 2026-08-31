@@ -610,3 +610,10 @@ div.dropdown-item > a {
     }
 }
 
+
+/* Adjust desktop logo alignment */
+@media (min-width: 1025px) {
+    .header .logo {
+        margin-left: 2.5rem;
+    }
+}
