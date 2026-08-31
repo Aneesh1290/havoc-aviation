@@ -543,3 +543,31 @@ div.dropdown-item > a {
     top: calc(100% + 12px) !important;
 }
 
+
+/* Global Mobile Spacing Reduction */
+@media (max-width: 768px) {
+    /* Reduce vertical padding for all standard sections on mobile */
+    section:not(.hero),
+    .section, 
+    .section-alt, 
+    .about-section, 
+    .privacy-section, 
+    .disclaimer-section, 
+    .contact-section,
+    .course-cta, 
+    .footer-cta {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+    
+    /* Course hero section needs slightly different padding to accommodate the header */
+    .course-hero {
+        padding-top: 7rem !important;
+        padding-bottom: 3rem !important;
+    }
+    
+    .programs-header {
+        padding-top: 6rem !important;
+        padding-bottom: 2rem !important;
+    }
+}
