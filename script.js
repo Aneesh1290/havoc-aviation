@@ -218,5 +218,34 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-});
 
+    // Havoc EFS Promo Modal Logic
+    const efsPromoModal = document.getElementById('efsPromoModal');
+    // Only show on index page (currentPath was defined at the top of script.js)
+    if (efsPromoModal && (currentPath === 'index.html' || currentPath === '')) {
+        const closePromoBtn = document.getElementById('closePromoModal');
+        
+        // Check if user has already seen the modal in this session
+        if (!sessionStorage.getItem('efsPromoSeen')) {
+            // Show modal after 3.5 seconds
+            setTimeout(() => {
+                efsPromoModal.classList.add('show');
+            }, 3500);
+        }
+
+        const closePromo = () => {
+            efsPromoModal.classList.remove('show');
+            sessionStorage.setItem('efsPromoSeen', 'true');
+        };
+
+        if (closePromoBtn) {
+            closePromoBtn.addEventListener('click', closePromo);
+        }
+
+        efsPromoModal.addEventListener('click', (e) => {
+            if (e.target === efsPromoModal) {
+                closePromo();
+            }
+        });
+    }
+});
