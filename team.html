@@ -3,40 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Havoc Aviation</title>
+    <title>Our Team | Havoc Aviation</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
-        .contact-section { padding: 6rem 0; background: var(--bg-light); }
-        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
-        .contact-info { padding-right: 2rem; }
-        .info-item { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 2rem; }
-        .info-icon { color: var(--primary-color); background: var(--white); padding: 0.75rem; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        .info-content h4 { font-size: 1.1rem; color: var(--secondary-color); margin-bottom: 0.25rem; }
-        .info-content p { color: var(--text-light); font-size: 0.9rem; }
+        .about-section { padding: 4rem 0 6rem 0; background: var(--white); }
+        .about-top-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; margin-bottom: 3rem; }
         
-        .contact-form-box { background: var(--white); padding: 3rem; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
-        .form-group { margin-bottom: 1.5rem; }
-        .form-group label { display: block; font-size: 0.85rem; font-weight: 500; margin-bottom: 0.5rem; color: var(--text-dark); }
-        .form-control { width: 100%; padding: 0.8rem 1rem; border: 1px solid var(--border-color); border-radius: 8px; font-family: inherit; font-size: 0.95rem; transition: border-color 0.3s; }
-        .form-control:focus { outline: none; border-color: var(--primary-color); }
+        .about-hero-block { background: var(--bg-light); border-radius: 24px; position: relative; overflow: hidden; display: flex; align-items: center; }
+        .about-hero-img-wrapper { position: absolute; inset: 0; width: 100%; height: 100%; }
+        .about-hero-img-wrapper img { width: 100%; height: 100%; object-fit: cover; object-position: right center; }
+        .about-hero-gradient { position: absolute; inset: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(248, 250, 252, 1) 0%, rgba(248, 250, 252, 0.9) 35%, rgba(248, 250, 252, 0) 100%); z-index: 1; }
+        .about-hero-content { position: relative; z-index: 2; width: 100%; max-width: 580px; padding: 5rem 4rem; }
         
-        .map-container { margin-top: 3rem; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.05); background: var(--white); padding: 1rem; position: relative; }
-        .map-placeholder { width: 100%; height: 300px; background: #e2e8f0 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,100 M100,0 L0,100" stroke="%23cbd5e1" stroke-width="0.5"/></svg>'); border-radius: 12px; display: flex; align-items: center; justify-content: center; }
-        .map-card { position: absolute; bottom: 2rem; left: 2rem; background: var(--white); padding: 1.5rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .about-points-block { background: var(--bg-light); border-radius: 24px; display: flex; flex-direction: column; overflow: hidden; }
+        .point-item { flex: 1; display: flex; gap: 1.5rem; align-items: center; padding: 0 2.5rem; border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .point-item:last-child { border-bottom: none; }
+        .point-icon { color: var(--secondary-color); display: flex; align-items: center; justify-content: center; }
+        .point-content h3 { font-size: 1.15rem; margin-bottom: 0.25rem; color: var(--secondary-color); font-weight: 700; }
+        .point-content p { color: var(--text-light); font-size: 0.95rem; line-height: 1.5; }
         
-        .contact-content h1 { font-size: 2.8rem; margin-bottom: 1.5rem; line-height: 1.2; }
-        
+        .about-highlights-block { background: var(--bg-light); border-radius: 24px; padding: 3rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; align-items: start; }
+        .highlight-item { display: flex; gap: 1rem; align-items: center; }
+        .highlight-icon { color: var(--secondary-color); display: flex; align-items: center; justify-content: center; }
+        .highlight-title { font-weight: 700; margin-bottom: 0.25rem; font-size: 0.95rem; color: var(--secondary-color); }
+        .highlight-desc { font-size: 0.85rem; color: var(--text-light); line-height: 1.4; }
+
+        .about-hero-content p.subtitle { color: var(--text-light); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 1rem; letter-spacing: 2px; }
+        .about-hero-content h1 { color: var(--secondary-color); font-size: 3.2rem; margin-bottom: 1.5rem; line-height: 1.15; font-weight: 800; }
+        .about-hero-content p.desc { font-size: 1.05rem; color: var(--secondary-color); font-weight: 500; margin-bottom: 2.5rem; line-height: 1.6; }
+
         @media (max-width: 992px) {
-            .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
-            .contact-info { padding-right: 0; }
-            .contact-section { padding: 8rem 0 4rem 0; }
+            .about-section { padding: 8rem 0 4rem 0; }
+            .about-top-grid { grid-template-columns: 1fr; }
+            .about-highlights-block { grid-template-columns: repeat(2, 1fr); padding: 2rem; }
+            .about-hero-content { padding: 4rem 2rem; max-width: 100%; }
+            .about-hero-block { min-height: 400px; }
         }
         @media (max-width: 768px) {
-            .contact-form-box { padding: 2rem 1.5rem; }
-            .contact-content h1 { font-size: 2.4rem; }
-            .map-card { position: relative; bottom: 0; left: 0; margin-top: 1rem; box-shadow: none; border: 1px solid var(--border-color); }
-            .map-container { padding: 0.5rem; }
+            .about-highlights-block { grid-template-columns: 1fr; }
+            .about-hero-content { padding: 3rem 1.5rem; }
+            .about-hero-content h1 { font-size: 2.2rem; }
+            .about-hero-gradient { background: linear-gradient(to right, rgba(248, 250, 252, 1) 0%, rgba(248, 250, 252, 0.95) 60%, rgba(248, 250, 252, 0.5) 100%); }
+            .point-item { padding: 1.25rem 1.5rem; }
         }
     </style>
 </head>
@@ -98,9 +107,8 @@
                 </div>
                 <a href="technology">Technology</a>
                 <a href="about">About</a>
-                <a href="team">Our Team</a>
                 <a href="careers">Careers</a>
-                <a href="contact" class="active">Contact</a>
+                <a href="contact">Contact</a>
             </nav>
 
             <div class="nav-actions">
@@ -110,56 +118,39 @@
         </div>
     </header>
 
-    <!-- Contact Content -->
-    <section class="contact-section">
+    <section class="section team-section" style="padding: 4rem 0 6rem 0; background: var(--white);">
         <div class="container">
-            <div class="contact-grid">
+            <h1 style="color: var(--secondary-color); font-size: 3.2rem; margin-bottom: 3rem; text-align: center; font-weight: 800;">Our Team</h1>
+            
+            <div class="team-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; align-items: start;">
                 
-                <!-- Left Side: Info -->
-                <div class="contact-info contact-content">
-                    <p style="color: var(--primary-color); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; margin-bottom: 1rem; letter-spacing: 1px;">GET IN TOUCH</p>
-                    <h1>Ready to Start<br>Your Aviation Journey?</h1>
-                    <p style="font-size: 1.05rem; color: #555; margin-bottom: 3rem;">Have questions? We're here to help. Reach out to us and take the first step towards a successful aviation career.</p>
-
-                    <div class="info-item">
-                        <div class="info-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-                        <div class="info-content">
-                            <h4>+91 95355 45654</h4>
-                            <p>Call us for more information</p>
-                        </div>
-                    </div>
-
-                    <div class="info-item">
-                        <div class="info-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-                        <div class="info-content">
-                            <h4>grpsabharwal@gmail.com</h4>
-                            <p>Email us anytime</p>
-                        </div>
-                    </div>
-
-                    <div class="info-item">
-                        <div class="info-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-                        <div class="info-content">
-                            <h4>Bengaluru, Karnataka</h4>
-                            <p>Bus Station 85, Kengal Hanumanthaiah Rd, Sudhama Nagar, Bengaluru - 560027</p>
-                        </div>
-                    </div>
-
-                    <div class="info-item">
-                        <div class="info-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-                        <div class="info-content">
-                            <h4>Mon - Sat: 10:00 AM - 6:00 PM</h4>
-                            <p>Sunday: Holiday</p>
-                        </div>
+                <!-- Bobby Sabharwal -->
+                <div class="team-card" style="background: var(--bg-light); border-radius: 24px; overflow: hidden; display: flex; flex-direction: column;">
+                    <img src="assets/bobby.jpeg" alt="Bobby Sabharwal" style="width: 100%; height: 400px; object-fit: cover; object-position: top;">
+                    <div style="padding: 2.5rem;">
+                        <h2 style="color: var(--secondary-color); font-size: 1.8rem; margin-bottom: 0.5rem;">Bobby Sabharwal</h2>
+                        <h3 style="color: var(--primary-color); font-size: 1rem; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700;">Founder, Managing Director & CEO — Havoc Group</h3>
+                        <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 1rem;">Bobby Sabharwal is the Founder, Managing Director and CEO of Havoc Group. His journey in aeromodelling began at the age of 15, driven by a deep passion for radio-controlled model aircraft, including RC planes and helicopters.</p>
+                        <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 1rem;">With decades of hands-on experience in aeromodelling, he transformed his passion into several innovative ventures, including Havoc Hobby, Havoc RC FunZone, Havoc Sim Podium, Havoc Fun School and Havoc Aviation.</p>
+                        <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 1rem;">His journey has evolved from aeromodelling and RC aviation to professional flight simulators and aviation education. Through Havoc Aviation, the Group is now expanding into pilot training support through ground school classes and advanced flight simulator training.</p>
+                        <p style="color: var(--text-light); line-height: 1.6;">From Aeromodelling to Aviation, Bobby Sabharwal’s journey has been driven by passion, innovation and a vision to make hobby technology, simulation and aviation education more accessible in India while inspiring the next generation of aviation enthusiasts and aspiring pilots.</p>
                     </div>
                 </div>
 
-                
+                <!-- Rakhi Madme -->
+                <div class="team-card" style="background: var(--bg-light); border-radius: 24px; overflow: hidden; display: flex; flex-direction: column;">
+                    <img src="assets/rekha.jpeg" alt="Rakhi Madme" style="width: 100%; height: 400px; object-fit: cover; object-position: top;">
+                    <div style="padding: 2.5rem;">
+                        <h2 style="color: var(--secondary-color); font-size: 1.8rem; margin-bottom: 0.5rem;">Rakhi Madme</h2>
+                        <h3 style="color: var(--primary-color); font-size: 1rem; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700;">Joint Director</h3>
+                        <p style="color: var(--text-light); line-height: 1.6;">Rakhi Madme serves as the Joint Director, bringing leadership and vision to the Havoc Group's operations and educational initiatives.</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Footer CTA -->
     <footer class="footer-cta">
         <div class="container">
             <h2>HIGHER SKILLS.<br>BRIGHTER HORIZONS.</h2>

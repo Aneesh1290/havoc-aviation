@@ -110,6 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <a href="${rp}technology">Technology</a>
                     <a href="${rp}about">About</a>
+                    <a href="${rp}team">Our Team</a>
                     <a href="${rp}careers">Careers</a>
                     <a href="${rp}contact">Contact</a>
                 </nav>
