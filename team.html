@@ -7,45 +7,99 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
-        .about-section { padding: 4rem 0 6rem 0; background: var(--white); }
-        .about-top-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; margin-bottom: 3rem; }
-        
-        .about-hero-block { background: var(--bg-light); border-radius: 24px; position: relative; overflow: hidden; display: flex; align-items: center; }
-        .about-hero-img-wrapper { position: absolute; inset: 0; width: 100%; height: 100%; }
-        .about-hero-img-wrapper img { width: 100%; height: 100%; object-fit: cover; object-position: right center; }
-        .about-hero-gradient { position: absolute; inset: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(248, 250, 252, 1) 0%, rgba(248, 250, 252, 0.9) 35%, rgba(248, 250, 252, 0) 100%); z-index: 1; }
-        .about-hero-content { position: relative; z-index: 2; width: 100%; max-width: 580px; padding: 5rem 4rem; }
-        
-        .about-points-block { background: var(--bg-light); border-radius: 24px; display: flex; flex-direction: column; overflow: hidden; }
-        .point-item { flex: 1; display: flex; gap: 1.5rem; align-items: center; padding: 0 2.5rem; border-bottom: 1px solid rgba(0,0,0,0.05); }
-        .point-item:last-child { border-bottom: none; }
-        .point-icon { color: var(--secondary-color); display: flex; align-items: center; justify-content: center; }
-        .point-content h3 { font-size: 1.15rem; margin-bottom: 0.25rem; color: var(--secondary-color); font-weight: 700; }
-        .point-content p { color: var(--text-light); font-size: 0.95rem; line-height: 1.5; }
-        
-        .about-highlights-block { background: var(--bg-light); border-radius: 24px; padding: 3rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; align-items: start; }
-        .highlight-item { display: flex; gap: 1rem; align-items: center; }
-        .highlight-icon { color: var(--secondary-color); display: flex; align-items: center; justify-content: center; }
-        .highlight-title { font-weight: 700; margin-bottom: 0.25rem; font-size: 0.95rem; color: var(--secondary-color); }
-        .highlight-desc { font-size: 0.85rem; color: var(--text-light); line-height: 1.4; }
+        .team-section { padding: 4rem 0 6rem 0; background: var(--white); }
+        .leadership-title { 
+            color: var(--secondary-color); 
+            font-size: 2.2rem; 
+            margin-bottom: 3rem; 
+            font-weight: 800; 
+            text-transform: uppercase; 
+            position: relative; 
+            display: inline-block;
+        }
+        .leadership-title::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin-top: 0.5rem;
+        }
 
-        .about-hero-content p.subtitle { color: var(--text-light); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 1rem; letter-spacing: 2px; }
-        .about-hero-content h1 { color: var(--secondary-color); font-size: 3.2rem; margin-bottom: 1.5rem; line-height: 1.15; font-weight: 800; }
-        .about-hero-content p.desc { font-size: 1.05rem; color: var(--secondary-color); font-weight: 500; margin-bottom: 2.5rem; line-height: 1.6; }
+        .team-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .team-card {
+            background: var(--bg-light);
+            border-radius: 12px;
+            border: 1px solid rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: row;
+            padding: 2.5rem;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        .team-image-wrapper {
+            flex-shrink: 0;
+            width: 350px;
+        }
+
+        .team-image-wrapper img {
+            width: 100%;
+            height: 350px;
+            border-radius: 12px;
+            object-fit: cover;
+            object-position: top;
+            display: block;
+        }
+
+        .team-content {
+            flex-grow: 1;
+        }
+
+        .team-name {
+            color: var(--secondary-color);
+            font-size: 2rem;
+            margin-bottom: 0.25rem;
+            font-weight: 800;
+        }
+
+        .team-title {
+            color: var(--primary-color);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        .team-desc p {
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+            font-size: 0.95rem;
+        }
+        
+        .team-desc p:last-child {
+            margin-bottom: 0;
+        }
 
         @media (max-width: 992px) {
-            .about-section { padding: 8rem 0 4rem 0; }
-            .about-top-grid { grid-template-columns: 1fr; }
-            .about-highlights-block { grid-template-columns: repeat(2, 1fr); padding: 2rem; }
-            .about-hero-content { padding: 4rem 2rem; max-width: 100%; }
-            .about-hero-block { min-height: 400px; }
-        }
-        @media (max-width: 768px) {
-            .about-highlights-block { grid-template-columns: 1fr; }
-            .about-hero-content { padding: 3rem 1.5rem; }
-            .about-hero-content h1 { font-size: 2.2rem; }
-            .about-hero-gradient { background: linear-gradient(to right, rgba(248, 250, 252, 1) 0%, rgba(248, 250, 252, 0.95) 60%, rgba(248, 250, 252, 0.5) 100%); }
-            .point-item { padding: 1.25rem 1.5rem; }
+            .team-card {
+                flex-direction: column;
+                padding: 2rem;
+                gap: 2rem;
+            }
+            .team-image-wrapper {
+                width: 100%;
+            }
+            .team-image-wrapper img {
+                height: 400px;
+            }
         }
     </style>
 </head>
@@ -118,35 +172,43 @@
         </div>
     </header>
 
-    <section class="section team-section" style="padding: 4rem 0 6rem 0; background: var(--white);">
+    <section class="section team-section">
         <div class="container">
-            <h1 style="color: var(--secondary-color); font-size: 3.2rem; margin-bottom: 3rem; text-align: center; font-weight: 800;">Our Team</h1>
+            <h1 class="leadership-title">LEADERSHIP</h1>
             
-            <div class="team-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; align-items: start;">
+            <div class="team-grid">
                 
                 <!-- Bobby Sabharwal -->
-                <div class="team-card" style="background: var(--bg-light); border-radius: 24px; overflow: hidden; display: flex; flex-direction: column;">
-                    <img src="assets/bobby.jpeg" alt="Bobby Sabharwal" style="width: 100%; height: 400px; object-fit: cover; object-position: top;">
-                    <div style="padding: 2.5rem;">
-                        <h2 style="color: var(--secondary-color); font-size: 1.8rem; margin-bottom: 0.5rem;">Bobby Sabharwal</h2>
-                        <h3 style="color: var(--primary-color); font-size: 1rem; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700;">Founder, Managing Director & CEO — Havoc Group</h3>
-                        <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 1rem;">Bobby Sabharwal is the Founder, Managing Director and CEO of Havoc Group. His journey in aeromodelling began at the age of 15, driven by a deep passion for radio-controlled model aircraft, including RC planes and helicopters.</p>
-                        <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 1rem;">With decades of hands-on experience in aeromodelling, he transformed his passion into several innovative ventures, including Havoc Hobby, Havoc RC FunZone, Havoc Sim Podium, Havoc Fun School and Havoc Aviation.</p>
-                        <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 1rem;">His journey has evolved from aeromodelling and RC aviation to professional flight simulators and aviation education. Through Havoc Aviation, the Group is now expanding into pilot training support through ground school classes and advanced flight simulator training.</p>
-                        <p style="color: var(--text-light); line-height: 1.6;">From Aeromodelling to Aviation, Bobby Sabharwal’s journey has been driven by passion, innovation and a vision to make hobby technology, simulation and aviation education more accessible in India while inspiring the next generation of aviation enthusiasts and aspiring pilots.</p>
+                <div class="team-card">
+                    <div class="team-image-wrapper">
+                        <img src="assets/bobby.jpeg" alt="Bobby Sabharwal">
+                    </div>
+                    <div class="team-content">
+                        <h2 class="team-name">Bobby Sabharwal</h2>
+                        <h3 class="team-title">Founder, Managing Director & CEO — Havoc Group</h3>
+                        <div class="team-desc">
+                            <p>Bobby Sabharwal is the Founder, Managing Director and CEO of Havoc Group. His journey in aeromodelling began at the age of 15, driven by a deep passion for radio-controlled model aircraft, including RC planes and helicopters.</p>
+                            <p>With decades of hands-on experience in aeromodelling, he transformed his passion into several innovative ventures, including Havoc Hobby, Havoc RC FunZone, Havoc Sim Podium, Havoc Fun School and Havoc Aviation.</p>
+                            <p>His journey has evolved from aeromodelling and RC aviation to professional flight simulators and aviation education. Through Havoc Aviation, the Group is now expanding into pilot training support through ground school classes and advanced flight simulator training.</p>
+                            <p>From Aeromodelling to Aviation, Bobby Sabharwal’s journey has been driven by passion, innovation and a vision to make hobby technology, simulation and aviation education more accessible in India while inspiring the next generation of aviation enthusiasts and aspiring pilots.</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Rakhi -->
-                <div class="team-card" style="background: var(--bg-light); border-radius: 24px; overflow: hidden; display: flex; flex-direction: column;">
-                    <img src="assets/rekha.jpeg" alt="Rakhi" style="width: 100%; height: 400px; object-fit: cover; object-position: top;">
-                    <div style="padding: 2.5rem;">
-                        <h2 style="color: var(--secondary-color); font-size: 1.8rem; margin-bottom: 0.5rem;">Rakhi</h2>
-                        <h3 style="color: var(--primary-color); font-size: 1rem; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700;">Joint Director — Havoc Group</h3>
-                        <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 1rem;">Rakhi serves as the Joint Director of Havoc Group, playing an important role in the Group’s leadership, administration and continued expansion. Working alongside Founder, Managing Director and CEO Bobby Sabharwal, she contributes to strategic planning, operational coordination and the development of new business ventures.</p>
-                        <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 1rem;">Since the establishment of Havoc Hobby Center in 2016, the organisation has grown from a specialised hobby destination into a diversified group of innovative ventures. These include Havoc Hobby, Havoc RC FunZone, Havoc Sim Podium, Havoc Fun School and Havoc Aviation.</p>
-                        <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 1rem;">Rakhi’s commitment, organisational leadership and support have contributed to the Group’s journey from RC hobbies and aeromodelling to experiential entertainment, professional flight and racing simulation, aviation education, ground-school learning and simulator-based pilot training.</p>
-                        <p style="color: var(--text-light); line-height: 1.6;">As Joint Director, she remains committed to strengthening the Group’s operations, supporting its team and helping transform ambitious ideas into meaningful experiences. Her vision is to contribute towards building Havoc Group as a trusted name in hobbies, simulation, education and aviation while inspiring young minds and aspiring pilots across India.</p>
+                <div class="team-card">
+                    <div class="team-image-wrapper">
+                        <img src="assets/rekha.jpeg" alt="Rakhi">
+                    </div>
+                    <div class="team-content">
+                        <h2 class="team-name">Rakhi</h2>
+                        <h3 class="team-title">Joint Director — Havoc Group</h3>
+                        <div class="team-desc">
+                            <p>Rakhi serves as the Joint Director of Havoc Group, playing an important role in the Group’s leadership, administration and continued expansion. Working alongside Founder, Managing Director and CEO Bobby Sabharwal, she contributes to strategic planning, operational coordination and the development of new business ventures.</p>
+                            <p>Since the establishment of Havoc Hobby Center in 2016, the organisation has grown from a specialised hobby destination into a diversified group of innovative ventures. These include Havoc Hobby, Havoc RC FunZone, Havoc Sim Podium, Havoc Fun School and Havoc Aviation.</p>
+                            <p>Rakhi’s commitment, organisational leadership and support have contributed to the Group’s journey from RC hobbies and aeromodelling to experiential entertainment, professional flight and racing simulation, aviation education, ground-school learning and simulator-based pilot training.</p>
+                            <p>As Joint Director, she remains committed to strengthening the Group’s operations, supporting its team and helping transform ambitious ideas into meaningful experiences. Her vision is to contribute towards building Havoc Group as a trusted name in hobbies, simulation, education and aviation while inspiring young minds and aspiring pilots across India.</p>
+                        </div>
                     </div>
                 </div>
 
