@@ -247,6 +247,10 @@ h3 { font-size: 1.5rem; }
     gap: 1rem;
 }
 
+.mobile-book-btn {
+    display: none;
+}
+
 /* Media Queries */
 @media (max-width: 1200px) {
   .nav-links { gap: 1.25rem !important; }
@@ -594,6 +598,21 @@ div.dropdown-item > a {
         right: 1.5rem;
         top: 50%;
         transform: translateY(-50%);
+    }
+    .mobile-book-btn {
+        display: inline-flex;
+        position: fixed;
+        bottom: 2rem;
+        right: 1.5rem;
+        padding: 0.8rem 1.5rem !important;
+        font-size: 1rem !important;
+        z-index: 1000;
+        background-color: var(--primary-color) !important;
+        color: var(--white) !important;
+        border: none !important;
+        box-shadow: 0 4px 15px rgba(242, 104, 34, 0.4) !important;
+        border-radius: 50px;
+        transform: none;
     }
     .header .logo img {
         height: 135px !important;
