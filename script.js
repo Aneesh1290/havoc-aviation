@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         headerContainer.appendChild(mobileBtn);
 
         const mobileBookBtn = document.createElement('a');
-        mobileBookBtn.href = "https://havoc-sim-podium.onrender.com/book";
+        mobileBookBtn.href = "https://www.havocsim.in/book-tickets";
         mobileBookBtn.className = 'mobile-book-btn btn btn-primary';
         mobileBookBtn.innerHTML = 'Book a Demo';
         document.body.appendChild(mobileBookBtn);
@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <a href="${rp}contact">Contact</a>
                 </nav>
                 <div class="mobile-nav-actions">
-                    <a href="https://havoc-sim-podium.onrender.com/book" class="btn btn-outline" style="margin-bottom: 0.5rem; justify-content: center; border: 2px solid var(--primary-color); color: var(--primary-color);">Book a Demo</a>
+                    <a href="https://www.havocsim.in/book-tickets" class="btn btn-outline" style="margin-bottom: 0.5rem; justify-content: center; border: 2px solid var(--primary-color); color: var(--primary-color);">Book a Demo</a>
                     <a href="${rp}contact" class="btn btn-primary" style="margin-bottom: 0.5rem; justify-content: center;">Enquire Now &rarr;</a>
                     
                 </div>
