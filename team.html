@@ -7,107 +7,233 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
-        .team-section { padding: 4rem 0 6rem 0; background: var(--white); }
-        .leadership-title { 
-            color: var(--secondary-color); 
-            font-size: 2.2rem; 
-            margin-bottom: 3rem; 
-            font-weight: 800; 
-            text-transform: uppercase; 
-            position: relative; 
-            display: inline-block;
+        .team-page {
+            background-color: #fdfdfd;
+            padding-bottom: 6rem;
         }
-        .leadership-title::after {
-            content: '';
-            display: block;
-            width: 100%;
-            height: 3px;
-            background-color: var(--primary-color);
-            margin-top: 0.5rem;
+
+        .section-header {
+            text-align: center;
+            margin: 5rem 0 3rem 0;
+        }
+
+        .section-title {
+            color: var(--navy, #122146);
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0;
         }
 
         .team-grid {
             display: flex;
-            flex-direction: column;
-            gap: 3rem;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
-        .team-card {
-            background: var(--bg-light);
-            border-radius: 12px;
-            border: 1px solid rgba(0,0,0,0.05);
+        .team-member {
             display: flex;
-            flex-direction: row;
-            padding: 2.5rem;
-            gap: 3rem;
-            align-items: flex-start;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 280px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-5px);
         }
 
-        .team-image-wrapper {
-            flex-shrink: 0;
-            width: 350px;
+        .team-photo {
+            width: 240px;
+            height: 240px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            border: 5px solid #fff;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            background-color: #eee;
+            transition: box-shadow 0.2s ease;
+        }
+        
+        .team-member:hover .team-photo {
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
         }
 
-        .team-image-wrapper img {
+        .team-photo img {
             width: 100%;
-            height: 350px;
-            border-radius: 12px;
+            height: 100%;
             object-fit: cover;
-            object-position: top;
             display: block;
         }
 
-        .team-content {
-            flex-grow: 1;
+        .team-name {
+            color: #333;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
         }
 
-        .team-name {
-            color: var(--secondary-color);
+        .team-role {
+            color: #777;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            line-height: 1.4;
+            padding: 0 1rem;
+        }
+
+        .team-desc {
+            display: none;
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            padding: 1.5rem;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: #fff;
+            border-radius: 12px;
+            max-width: 700px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
             font-size: 2rem;
-            margin-bottom: 0.25rem;
+            line-height: 1;
+            color: #888;
+            cursor: pointer;
+            padding: 0;
+            transition: color 0.2s;
+            z-index: 2;
+        }
+
+        .modal-close:hover {
+            color: #333;
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            padding: 2.5rem;
+            border-bottom: 1px solid #eee;
+            background: #fafafa;
+        }
+
+        .modal-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+            border: 3px solid #fff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .modal-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-title-wrap h2 {
+            font-size: 1.8rem;
+            color: var(--secondary-color, #1a295c);
+            margin: 0 0 0.5rem 0;
             font-weight: 800;
         }
 
-        .team-title {
-            color: var(--primary-color);
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
+        .modal-title-wrap h3 {
+            font-size: 0.9rem;
+            color: #777;
             text-transform: uppercase;
             letter-spacing: 1px;
-            font-weight: 700;
+            margin: 0;
+            font-weight: 600;
         }
 
-        .team-desc p {
-            color: var(--text-light);
+        .modal-body {
+            padding: 2.5rem;
+            color: #555;
             line-height: 1.7;
-            margin-bottom: 1.25rem;
             font-size: 0.95rem;
         }
-        
-        .team-desc p:last-child {
+
+        .modal-body p {
+            margin-bottom: 1.2rem;
+        }
+
+        .modal-body p:last-child {
             margin-bottom: 0;
         }
 
-        @media (max-width: 992px) {
-            .team-card {
+        @media (max-width: 768px) {
+            .team-grid {
+                gap: 3rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .modal-header {
                 flex-direction: column;
-                padding: 1.5rem;
+                text-align: center;
+                padding: 2rem 1.5rem;
                 gap: 1.5rem;
             }
-            .team-image-wrapper {
-                width: 100%;
-                display: flex;
-                justify-content: center;
+            .modal-body {
+                padding: 1.5rem;
             }
-            .team-image-wrapper img {
-                height: auto;
-                max-width: 100%;
-                aspect-ratio: 1 / 1;
+            .modal-close {
+                top: 1rem;
+                right: 1rem;
             }
         }
     </style>
 </head>
-<body>
+<body class="team-page">
 
     <!-- Header -->
     <header class="header" style="background: var(--white); position: relative; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
@@ -176,68 +302,86 @@
         </div>
     </header>
 
-    <section class="section team-section">
-        <div class="container">
-            <h1 class="leadership-title">LEADERSHIP</h1>
-            
-            <div class="team-grid">
-                
-                <!-- Bobby Sabharwal -->
-                <div class="team-card">
-                    <div class="team-image-wrapper">
-                        <img src="assets/bobby.jpeg" alt="Bobby Sabharwal">
-                    </div>
-                    <div class="team-content">
-                        <h2 class="team-name">Bobby Sabharwal</h2>
-                        <h3 class="team-title">Founder, Managing Director &amp; CEO — Havoc Group</h3>
-                        <div class="team-desc">
-                            <p>Bobby Sabharwal is the Founder, Managing Director and CEO of Havoc Group. His journey in aeromodelling began at the age of 15, driven by a deep passion for radio-controlled model aircraft, including RC planes and helicopters.</p>
-                            <p>With decades of hands-on experience in aeromodelling, he transformed his passion into several innovative ventures, including Havoc Hobby, Havoc RC FunZone, Havoc Sim Podium, Havoc Fun School and Havoc Aviation.</p>
-                            <p>His journey has evolved from aeromodelling and RC aviation to professional flight simulators and aviation education. Through Havoc Aviation, the Group is now expanding into pilot training support through ground school classes and advanced flight simulator training.</p>
-                            <p>From Aeromodelling to Aviation, Bobby Sabharwal's journey has been driven by passion, innovation and a vision to make hobby technology, simulation and aviation education more accessible in India while inspiring the next generation of aviation enthusiasts and aspiring pilots.</p>
-                        </div>
-                    </div>
+    <div class="container">
+        
+        <!-- LEADERSHIP SECTION -->
+        <div class="section-header">
+            <h1 class="section-title">LEADERSHIP</h1>
+        </div>
+        
+        <div class="team-grid">
+            <div class="team-member" onclick="openTeamModal(this)">
+                <div class="team-photo">
+                    <img src="assets/bobby.jpeg" alt="Bobby Sabharwal">
                 </div>
-
-                <!-- Rakhi -->
-                <div class="team-card">
-                    <div class="team-image-wrapper">
-                        <img src="assets/rekha.jpeg" alt="Rakhi">
-                    </div>
-                    <div class="team-content">
-                        <h2 class="team-name">Rakhi</h2>
-                        <h3 class="team-title">Joint Director — Havoc Group</h3>
-                        <div class="team-desc">
-                            <p>Rakhi serves as the Joint Director of Havoc Group, playing an important role in the Group's leadership, administration and continued expansion. Working alongside Founder, Managing Director and CEO Bobby Sabharwal, she contributes to strategic planning, operational coordination and the development of new business ventures.</p>
-                            <p>Since the establishment of Havoc Hobby Center in 2016, the organisation has grown from a specialised hobby destination into a diversified group of innovative ventures. These include Havoc Hobby, Havoc RC FunZone, Havoc Sim Podium, Havoc Fun School and Havoc Aviation.</p>
-                            <p>Rakhi's commitment, organisational leadership and support have contributed to the Group's journey from RC hobbies and aeromodelling to experiential entertainment, professional flight and racing simulation, aviation education, ground-school learning and simulator-based pilot training.</p>
-                            <p>As Joint Director, she remains committed to strengthening the Group's operations, supporting its team and helping transform ambitious ideas into meaningful experiences. Her vision is to contribute towards building Havoc Group as a trusted name in hobbies, simulation, education and aviation while inspiring young minds and aspiring pilots across India.</p>
-                        </div>
-                    </div>
+                <div class="team-name">Bobby Sabharwal</div>
+                <div class="team-role">FOUNDER, MANAGING DIRECTOR &amp; CEO — HAVOC GROUP</div>
+                <div class="team-desc">
+                    <p>Bobby Sabharwal is the Founder, Managing Director and CEO of Havoc Group. His journey in aeromodelling began at the age of 15, driven by a deep passion for radio-controlled model aircraft, including RC planes and helicopters.</p>
+                    <p>With decades of hands-on experience in aeromodelling, he transformed his passion into several innovative ventures, including Havoc Hobby, Havoc RC FunZone, Havoc Sim Podium, Havoc Fun School and Havoc Aviation.</p>
+                    <p>His journey has evolved from aeromodelling and RC aviation to professional flight simulators and aviation education. Through Havoc Aviation, the Group is now expanding into pilot training support through ground school classes and advanced flight simulator training.</p>
+                    <p>From Aeromodelling to Aviation, Bobby Sabharwal's journey has been driven by passion, innovation and a vision to make hobby technology, simulation and aviation education more accessible in India while inspiring the next generation of aviation enthusiasts and aspiring pilots.</p>
                 </div>
+            </div>
 
-                <!-- Arya Nanda J. A. -->
-                <div class="team-card">
-                    <div class="team-image-wrapper">
-                        <img src="assets/arya.jpeg" alt="Arya Nanda J. A.">
-                    </div>
-                    <div class="team-content">
-                        <h2 class="team-name">Arya Nanda J. A.</h2>
-                        <h3 class="team-title">Flight Simulator Instructor</h3>
-                        <div class="team-desc">
-                            <p>Arya Nanda J. A. is currently pursuing a Bachelor of Engineering (B.E.) in Information Science and Engineering at Atria Institute of Technology, Bengaluru, with expected graduation in June 2027. He completed his Pre-University education in Science (PCMC) from Seshadripuram Composite PU College and his high-school education from Poornaprajna Education Center.</p>
-                            <p>With more than 400 hours of hands-on experience on Microsoft Flight Simulator, Arya has developed a strong understanding of cockpit familiarisation, aircraft controls, flight planning, navigation, take-off and landing procedures, instrument operations, weather conditions, and overall flight management.</p>
-                            <p>As a Flight Simulator Instructor, Arya guides students through simulator familiarisation, basic aircraft handling, cockpit procedures, navigation fundamentals, and different phases of simulated flight. His technical education, extensive simulator experience, disciplined approach, and passion for aviation enable him to provide an engaging and structured learning experience.</p>
-                            <p><em>Note: The 400+ hours represent flight-simulator experience and not actual aircraft flying hours.</em></p>
-                        </div>
-                    </div>
+            <div class="team-member" onclick="openTeamModal(this)">
+                <div class="team-photo">
+                    <img src="assets/rekha.jpeg" alt="Rakhi">
                 </div>
-
+                <div class="team-name">Rakhi</div>
+                <div class="team-role">JOINT DIRECTOR — HAVOC GROUP</div>
+                <div class="team-desc">
+                    <p>Rakhi serves as the Joint Director of Havoc Group, playing an important role in the Group's leadership, administration and continued expansion. Working alongside Founder, Managing Director and CEO Bobby Sabharwal, she contributes to strategic planning, operational coordination and the development of new business ventures.</p>
+                    <p>Since the establishment of Havoc Hobby Center in 2016, the organisation has grown from a specialised hobby destination into a diversified group of innovative ventures. These include Havoc Hobby, Havoc RC FunZone, Havoc Sim Podium, Havoc Fun School and Havoc Aviation.</p>
+                    <p>Rakhi's commitment, organisational leadership and support have contributed to the Group's journey from RC hobbies and aeromodelling to experiential entertainment, professional flight and racing simulation, aviation education, ground-school learning and simulator-based pilot training.</p>
+                    <p>As Joint Director, she remains committed to strengthening the Group's operations, supporting its team and helping transform ambitious ideas into meaningful experiences. Her vision is to contribute towards building Havoc Group as a trusted name in hobbies, simulation, education and aviation while inspiring young minds and aspiring pilots across India.</p>
+                </div>
             </div>
         </div>
-    </section>
 
-    <footer class="footer-cta">
+        <!-- SIMULATION TEAM SECTION -->
+        <div class="section-header">
+            <h1 class="section-title">SIMULATION</h1>
+        </div>
+        
+        <div class="team-grid">
+            <div class="team-member" onclick="openTeamModal(this)">
+                <div class="team-photo">
+                    <img src="assets/arya.jpeg" alt="Arya Nanda J. A.">
+                </div>
+                <div class="team-name">Arya Nanda J. A.</div>
+                <div class="team-role">FLIGHT SIMULATOR INSTRUCTOR</div>
+                <div class="team-desc">
+                    <p>Arya Nanda J. A. is currently pursuing a Bachelor of Engineering (B.E.) in Information Science and Engineering at Atria Institute of Technology, Bengaluru, with expected graduation in June 2027. He completed his Pre-University education in Science (PCMC) from Seshadripuram Composite PU College and his high-school education from Poornaprajna Education Center.</p>
+                    <p>With more than 400 hours of hands-on experience on Microsoft Flight Simulator, Arya has developed a strong understanding of cockpit familiarisation, aircraft controls, flight planning, navigation, take-off and landing procedures, instrument operations, weather conditions, and overall flight management.</p>
+                    <p>As a Flight Simulator Instructor, Arya guides students through simulator familiarisation, basic aircraft handling, cockpit procedures, navigation fundamentals, and different phases of simulated flight. His technical education, extensive simulator experience, disciplined approach, and passion for aviation enable him to provide an engaging and structured learning experience.</p>
+                    <p><em>Note: The 400+ hours represent flight-simulator experience and not actual aircraft flying hours.</em></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Team Modal -->
+    <div class="modal-overlay" id="teamModal" onclick="closeTeamModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeTeamModal()">&times;</button>
+            <div class="modal-header">
+                <div class="modal-photo">
+                    <img id="modalImg" src="" alt="Team Member">
+                </div>
+                <div class="modal-title-wrap">
+                    <h2 id="modalName">Name</h2>
+                    <h3 id="modalRole">Role</h3>
+                </div>
+            </div>
+            <div class="modal-body" id="modalDesc">
+                <!-- Description content goes here -->
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-cta" style="margin-top: 6rem;">
         <div class="container">
             <h2>HIGHER SKILLS.<br>BRIGHTER HORIZONS.</h2>
             <a href="contact" class="btn btn-primary" style="padding: 1rem 2rem; font-size: 1.1rem;">Join Havoc Aviation &rarr;</a>
@@ -258,5 +402,31 @@
     </footer>
 
 <script src="script.js"></script>
+<script>
+    function openTeamModal(element) {
+        const modal = document.getElementById('teamModal');
+        const img = element.querySelector('img').src;
+        const name = element.querySelector('.team-name').innerText;
+        const role = element.querySelector('.team-role').innerText;
+        const descHtml = element.querySelector('.team-desc').innerHTML;
+
+        document.getElementById('modalImg').src = img;
+        document.getElementById('modalName').innerText = name;
+        document.getElementById('modalRole').innerText = role;
+        document.getElementById('modalDesc').innerHTML = descHtml;
+
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeTeamModal(event) {
+        // If event is passed, check if we clicked on the overlay specifically
+        if (event && event.target !== document.getElementById('teamModal')) return;
+        
+        const modal = document.getElementById('teamModal');
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+</script>
 </body>
 </html>
